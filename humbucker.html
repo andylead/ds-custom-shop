@@ -1,0 +1,816 @@
+<style>
+body {
+  background-color: #f5f5f5;
+}
+form {
+  display: block;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #725742;
+}
+.form-control {
+  width: 450px;
+  min-height: 40px;
+  border: 1px solid #b89c88;
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+}
+#comments.form-control {
+  height: 200px;
+  overflow: scroll;
+}
+.base-bg {
+  position: fixed;
+  z-index: 998;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 448px;
+  height: 320px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #b89c88;
+}
+.base1 {
+  position: fixed;
+  z-index: 999;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.colorSupInf {
+  position: fixed;
+  z-index: 1000;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.cover {
+  position: fixed;
+  z-index: 1002;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.tornilloSupInf {
+  position: fixed;
+  z-index: 1001;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.boton-cotizar {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  width: 300px;
+  height: 40px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: #725742;
+}
+.boton-cotizar:hover {
+  background-color: #97775f;
+}
+.bottom-spacer {
+  height: 360px;
+}
+.descripcion {
+  width: 700px;
+  text-align: justify;
+}
+</style>
+<form class="form">
+  <div class="form-group">
+    <label for="Modelo">Modelo</label>
+    <select class="form-control" id="Modelo" name="Modelo">
+      <option value="P-Classic">(DS30) P-Classic</option>
+      <option value="Expression">(DS31) Expression</option>
+      <option value="Impact Distortion">(DS32) Impact Distortion</option>
+      <option value="AH1">(DS33) AH1</option>
+      <option value="AH2">(DS34) AH2</option>
+      <option value="AH3">(DS35) AH3</option>
+      <option value="PAF II">(DS36) PAF II</option>
+      <option value="PRO II">(DS37) PRO II</option>
+      <option value="Heavy Custom II">(DS38) Heavy Custom II</option>
+      <option value="Tóxico">(DS98) Tóxico</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Posición">Posición</label>
+    <select class="form-control" id="Posición" name="Posición">
+      <option value="Mástil">Mástil</option>
+      <option value="Puente">Puente</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Imán">Tipo de imantación</label>
+    <select class="form-control" id="Imán" name="Imán">
+      <option value="Alnico 2">Alnico 2</option>
+      <option value="Alnico 5">Alnico 5</option>
+      <option value="Alnico 8">Alnico 8</option>
+      <option value="Cerámico">Cerámico</option>
+    </select>
+  </div>
+  <div class="form-group" id="covertor">
+    <label for="Cobertor">Tipo de Cobertor</label>
+    <select class="form-control" id="Cobertor">
+      <option value="Ninguno">Ninguno</option>
+      <option value="Alpaca Pul">Alpaca Pulida</option>
+      <option value="Alpaca Nat">Alpaca Natural</option>
+      <option value="Alpaca Rus">Alpaca Rústica</option>
+      <option value="Dorado">Dorado</option>
+      <option value="Alpaca Rus6">Alpaca Rústica con 6 agujeros</option>
+      <option value="Alpaca Rus12">Alpaca Rústica con 12 agujeros</option>
+      <option value="Abierto Cro">Abierto Cromado</option>
+      <option value="Abierto Fla">Abierto Flameado</option>
+      <option value="Abierto Niq">Abierto Niquelado</option>
+      <option value="Abierto Dor">Abierto Dorado</option>
+    </select>
+  </div>
+  <div class="form-group" id="tornilloSupDiv">
+    <label for="tornilloSup">Tornillos de bobina superior</label>
+    <select class="form-control" id="tornilloSup" name="tornilloSup">
+      <option value="Sólidos">Núcleos sólidos</option>
+      <option value="RanuraNiq">Tornillos ranurados niquelados</option>
+      <option value="AllenNiq">Tornillos Allen niquelados</option>
+      <option value="AllenNeg">Tornillos Allen negros</option>
+    </select>
+  </div>
+  <div class="form-group" id="tornilloInfDiv">
+    <label for="tornilloInf">Tornillos de bobina inferior</label>
+    <select class="form-control" id="tornilloInf" name="tornilloInf">
+      <option value="Sólidos">Núcleos sólidos</option>
+      <option value="RanuraNiq">Tornillos ranurados niquelados</option>
+      <option value="AllenNiq">Tornillos Allen niquelados</option>
+      <option value="AllenNeg">Tornillos Allen negros</option>
+    </select>
+  </div>
+  <div class="form-group" id="colorSupDiv">
+    <label for="ColorSup">Color de bobina superior</label>
+    <select class="form-control" id="ColorSup" name="ColorSup">
+      <option value="Blanco">Blanco</option>
+      <option value="Negro">Negro</option>
+      <option value="Marfil">Marfil</option>
+      <option value="Crema">Crema</option>
+      <option value="Verdoso">Amarillo Verdoso</option>
+      <option value="Amarillo">Amarillo</option>
+      <option value="Verde">Verde</option>
+      <option value="Rosa">Rosa</option>
+      <option value="Turquesa">Turquesa</option>
+      <option value="Azul">Azul</option>
+    </select>
+  </div>
+  <div class="form-group" id="colorInfDiv">
+    <label for="ColorInf">Color de bobina inferior</label>
+    <select class="form-control" id="ColorInf" name="ColorInf">
+      <option value="Blanco">Blanco</option>
+      <option value="Negro">Negro</option>
+      <option value="Marfil">Marfil</option>
+      <option value="Crema">Crema</option>
+      <option value="Verdoso">Amarillo Verdoso</option>
+      <option value="Amarillo">Amarillo</option>
+      <option value="Verde">Verde</option>
+      <option value="Rosa">Rosa</option>
+      <option value="Turquesa">Turquesa</option>
+      <option value="Azul">Azul</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Nombre">Nombre</label>
+    <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Darío Soich">
+  </div>
+  <div class="form-group">
+    <label for="E-Mail">E-mail</label>
+    <input type="email" class="form-control" id="E-Mail" name="email">
+  </div>
+  <div class="form-group">
+    <label for="Comments">¿Comentarios o preguntas?</label>
+    <textarea class="form-control" id="Comments" rows="5"></textarea>
+  </div>
+  <button type="submit" class="boton-cotizar">COTIZAR</button>
+  <div class="descripcion">
+    <div id="ds30ce"><p>Inspirado en el sonido P.A.F pero en formato cerámico, el P-Classic ofrece cristalinos tonos con una impronta ampliada. Este modelo tiene un gran sonido rítmico y un cortante tono que atraviesa la mezcla con mayor ataque y agresividad comparado con los clásicos doble bobina P.A.F de ALNICO. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados, incluido simple bobina, el cual produce un tono cristalino y punzante. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8K (mástil) y 8,2K (puente)</li>
+        <li>IMANTACIÓN: Barra CERAMICA</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds30a2"><p>Inspirado en el sonido P.A.F, el P-Classic ofrece cristalinos tonos con una impronta ampliada. Este modelo tiene un gran sonido rítmico y un cortante tono que atraviesa la mezcla con mayor ataque y agresividad. Una barra de ALNICO 2 imantada al 100% le aporta tonos más cálidos y dulces con mucho sustain. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados, incluido simple bobina, el cual produce un tono cristalino y punzante. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8K (mástil) y 8,2K (puente)</li>
+        <li>IMANTACIÓN: Barra ALNICO 2</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds30a5"><p>Inspirado en el sonido P.A.F, el P-Classic ofrece cristalinos tonos con una impronta ampliada. Este modelo tiene un gran sonido rítmico y un cortante tono que atraviesa la mezcla con mayor ataque y agresividad. Una barra de ALNICO 5 imantada al 100% le aporta definición y ataque sobre las cuerdas (comparado con el modelo en ALNICO 2) , volviéndolo más agresivo y punzante. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados, incluido simple bobina, el cual produce un tono cristalino y punzante. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8K (mástil) y 8,2K (puente)</li>
+        <li>IMANTACIÓN: Barra ALNICO 5</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds30a8"><p>Inspirado en el sonido P.A.F, el P-Classic ofrece cristalinos tonos con una impronta ampliada. Este modelo tiene un gran sonido rítmico y un cortante tono que atraviesa la mezcla con mayor ataque y agresividad. Una barra de ALNICO 8 imantada al 100% le brinda la claridad típica de la imantación cerámica junto a la mayor calidez y sustain del ALNICO. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados, incluido simple bobina, el cual produce un tono cristalino y punzante. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8K (mástil) y 8,2K (puente)</li>
+        <li>IMANTACIÓN: Barra ALNICO 8</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds31ce"><p>Versátil humbucker moderno que ofrece desde cálidos y dulces tonos hasta un crudo rock n' roll con focalizados agudos gracias a su tipo de imantación cerámica. El Expression ofrece un tono P.A.F moderno con más cuerpo comparado con el P-Classic (DS30) y provee profundos medios con muy buenos armónicos que resaltan su carácter y ataque. El músico escuchará una más natural compresión y una mayor excitación en la entrada del amplificador. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 8,95K (mástil) y 10K (puente)</li>
+        <li>IMANTACIÓN: Barra CERAMICA</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds31a2"><p>Versátil humbucker moderno que ofrece desde cálidos y dulces tonos hasta un crudo rock n' roll con focalizados medios-agudos gracias al agregado de un imán en ALNICO 2. El Expression ofrece un tono P.A.F moderno con más cuerpo comparado con el P-Classic (DS30) y provee profundos medios con muy buen sustain. El músico escuchará una más natural compresión y una mayor excitación en la entrada del amplificador. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 8K (mástil) y 8,2K (puente)</li>
+        <li>IMANTACIÓN: Barra ALNICO 2</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds31a5"><p>Versátil humbucker moderno que ofrece desde cálidos y dulces tonos hasta un crudo rock n' roll. La elección de una barra de ALNICO 5 le aporta definición y ataque sobre las cuerdas, volviéndolo más agresivo y punzante especialmente en el rango agudo. El Expression ofrece un tono P.A.F moderno con más cuerpo comparado con el P-Classic (DS30) y provee profundos medios con muy buen sustain. El músico escuchará una más natural compresión y una mayor excitación en la entrada del amplificador. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 8K (mástil) y 8,2K (puente)</li>
+        <li>IMANTACIÓN: Barra ALNICO 5</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds31a8"><p>Versátil humbucker moderno que ofrece desde cálidos y dulces tonos hasta un crudo rock n' roll. La barra de ALNICO 8 le brinda la claridad típica de la imantación cerámica junto a la mayor calidez y sustain del ALNICO. El Expression ofrece un tono P.A.F moderno con más cuerpo comparado con el P-Classic (DS30) y provee profundos medios con muy buen sustain. El músico escuchará una más natural compresión y una mayor excitación en la entrada del amplificador. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 8K (mástil) y 8,2K (puente)</li>
+        <li>IMANTACIÓN: Barra ALNICO 8</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds32ce"><p>Este micrófono fue nuestro primer humbucker cerámico de alta salida. Utilizamos un imán cerámico extra-imantado y muchas vueltas en los bobinados para producir ese tono rabioso y contundente para rock & heavy, con marcados medios altos para atravesar mejor la mezcla en una banda. Es ideal para músicos que desean obtener fuertes machaques, mientras que el sonido va al frente en los solos con buenos armónicos. El sonido también permanece punzante para performances con afinaciones bajas. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Alta</li>
+        <li>RESISTENCIA: 19,7K (mástil) y 20,75K (puente)</li>
+        <li>IMANTACIÓN: Barra CERAMICA</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds32a2"><p>Este micrófono fue nuestro primer humbucker de alta salida. Utilizamos muchas vueltas en los bobinados para producir ese tono rabioso y contundente para rock & heavy, con marcados medios para atravesar mejor la mezcla. La elección de una barra de ALNICO 2 imantada al 100%, le aporta tonos más cálidos y dulces con mucho sustain. Es ideal para músicos que desean obtener fuertes machaques, mientras que el sonido va al frente en los solos con buenos armónicos. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Alta</li>
+        <li>RESISTENCIA: 19,7K (mástil) y 20,75K (puente)</li>
+        <li>IMANTACIÓN: Barra ALNICO 2</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds32a5"><p>Este micrófono fue nuestro primer humbucker de alta salida. Utilizamos muchas vueltas en los bobinados para producir ese tono rabioso y contundente para rock & heavy, con marcados medios para atravesar mejor la mezcla. Es ideal para músicos que desean obtener fuertes machaques, mientras que el sonido va al frente en los solos con buenos armónicos. En comparación al modelo en ALNICO 2, esta versión le aporta mejor cristalinidad y ataque sobre las cuerdas, volviéndolo más agresivo y punzante especialmente en las notas agudas. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Alta</li>
+        <li>RESISTENCIA: 19,7K (mástil) y 20,75K (puente)</li>
+        <li>IMANTACIÓN: Barra ALNICO 5</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds32a8"><p>Este micrófono fue nuestro primer humbucker de alta salida. Utilizamos muchas vueltas en los bobinados para producir ese tono rabioso y contundente para rock & heavy, con marcados medios para atravesar mejor la mezcla. Es ideal para músicos que desean obtener fuertes machaques, mientras que el sonido va al frente en los solos con muy buenos armónicos. En comparación con el modelo cerámico, le elección de una barra de ALNICO 8 le brinda la claridad típica de la imantación cerámica junto a la mayor calidez y sustain del ALNICO. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Alta</li>
+        <li>RESISTENCIA: 19,7K (mástil) y 20,75K (puente)</li>
+        <li>IMANTACIÓN: Barra ALNICO 8</li>
+        <li>CANCELACIÓN DE RUIDO: Sí</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: CEM1 blindado con sistema de conector rápido.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+  </div>
+</form>
+<div class="bottom-spacer"></div>
+<div class="base-bg" id="base-bg">
+</div>
+<div class="base" id="base">
+  <img src="base.png" class="base1" id="base1">
+</div>
+<div class="colorSupInf" id="colorSup">
+  <img src="colorSupBlanco.png" class="colorSupInf" id="colorSupBlanco">
+  <img src="colorSupNegro.png" class="colorSupInf" id="colorSupNegro">
+  <img src="colorSupMarfil.png" class="colorSupInf" id="colorSupMarfil">
+  <img src="colorSupCrema.png" class="colorSupInf" id="colorSupCrema">
+  <img src="colorSupVerdoso.png" class="colorSupInf" id="colorSupVerdoso">
+  <img src="colorSupAmarillo.png" class="colorSupInf" id="colorSupAmarillo">
+  <img src="colorSupVerde.png" class="colorSupInf" id="colorSupVerde">
+  <img src="colorSupRosa.png" class="colorSupInf" id="colorSupRosa">
+  <img src="colorSupTurquesa.png" class="colorSupInf" id="colorSupTurquesa">
+  <img src="colorSupAzul.png" class="colorSupInf" id="colorSupAzul">
+</div>
+<div class="colorSupInf" id="colorInf">
+  <img src="colorInfBlanco.png" class="colorSupInf" id="colorInfBlanco">
+  <img src="colorInfBlanco2.png" class="colorSupInf" id="colorInfBlanco2">
+  <img src="colorInfNegro.png" class="colorSupInf" id="colorInfNegro">
+  <img src="colorInfNegro2.png" class="colorSupInf" id="colorInfNegro2">
+  <img src="colorInfMarfil.png" class="colorSupInf" id="colorInfMarfil">
+  <img src="colorInfMarfil2.png" class="colorSupInf" id="colorInfMarfil2">
+  <img src="colorInfCrema.png" class="colorSupInf" id="colorInfCrema">
+  <img src="colorInfCrema2.png" class="colorSupInf" id="colorInfCrema2">
+  <img src="colorInfVerdoso.png" class="colorSupInf" id="colorInfVerdoso">
+  <img src="colorInfVerdoso2.png" class="colorSupInf" id="colorInfVerdoso2">
+  <img src="colorInfAmarillo.png" class="colorSupInf" id="colorInfAmarillo">
+  <img src="colorInfAmarillo2.png" class="colorSupInf" id="colorInfAmarillo2">
+  <img src="colorInfVerde.png" class="colorSupInf" id="colorInfVerde">
+  <img src="colorInfVerde2.png" class="colorSupInf" id="colorInfVerde2">
+  <img src="colorInfRosa.png" class="colorSupInf" id="colorInfRosa">
+  <img src="colorInfRosa2.png" class="colorSupInf" id="colorInfRosa2">
+  <img src="colorInfTurquesa.png" class="colorSupInf" id="colorInfTurquesa">
+  <img src="colorInfTurquesa2.png" class="colorSupInf" id="colorInfTurquesa2">
+  <img src="colorInfAzul.png" class="colorSupInf" id="colorInfAzul">
+  <img src="colorInfAzul2.png" class="colorSupInf" id="colorInfAzul2">
+</div>
+<div class="tornilloSupInf" id="torSup">
+  <img src="torSupSolidos.png" class="tornilloSupInf" id="torSupSolido">
+  <img src="torSupRanurado.png" class="tornilloSupInf" id="torSupRanurado">
+  <img src="torSupRanurado2.png" class="tornilloSupInf" id="torSupRanurado2">
+  <img src="torSupAllenBk.png" class="tornilloSupInf" id="torSupAllenNegro">
+  <img src="torSupAllenBk2.png" class="tornilloSupInf" id="torSupAllenNegro2">
+  <img src="torSupAllen.png" class="tornilloSupInf" id="torSupAllen">
+  <img src="torSupAllen2.png" class="tornilloSupInf" id="torSupAllen2">
+</div>
+<div class="tornilloSupInf" id="torInf">
+  <img src="torInfSolidos.png" class="tornilloSupInf" id="torInfSolido">
+  <img src="torInfRanurado.png" class="tornilloSupInf" id="torInfRanurado">
+  <img src="torInfRanurado2.png" class="tornilloSupInf" id="torInfRanurado2">
+  <img src="torInfAllenBk.png" class="tornilloSupInf" id="torInfAllenNegro">
+  <img src="torInfAllenBk2.png" class="tornilloSupInf" id="torInfAllenNegro2">
+  <img src="torInfAllen.png" class="tornilloSupInf" id="torInfAllen">
+  <img src="torInfAllen2.png" class="tornilloSupInf" id="torInfAllen2">
+</div>
+<div class="cover" id="cover">
+  <img src="coverCromo.png" class="cover" id="coverAlpPulida">
+  <img src="coverAlpacaNatural.png" class="cover" id="coverAlpNatural">
+  <img src="coverAlpacaRústica.png" class="cover" id="coverAlpRustica">
+  <img src="coverDorado.png" class="cover" id="coverDorado">
+  <img src="coverAlpacaRústica6b.png" class="cover" id="coverAlpRustica6b">
+  <img src="coverAlpacaRústica6n.png" class="cover" id="coverAlpRustica6n">
+  <img src="coverAlpacaRústica12.png" class="cover" id="coverAlpRustica12">
+  <img src="coverAbiertoCromo.png" class="cover" id="coverAbiCromado">
+  <img src="coverAbiertoFlameado.png" class="cover" id="coverAbiFlameado">
+  <img src="coverAbiertoNiquel.png" class="cover" id="coverAbiNiquelado">
+  <img src="coverAbiertoDorado.png" class="cover" id="coverAbiDorado">
+</div>
+<script type="text/javascript">
+// Muestra las primeras previews //
+$(function(){
+  $('#torInfSolido').show().siblings().hide()
+  $('#torSupSolido').show().siblings().hide()
+  $('#colorInfBlanco').show().siblings().hide()
+  $('#colorSupBlanco').show().siblings().hide()
+  $('#coverAlpPulida').hide().siblings().hide()
+  $('#ds30a2').show().siblings().hide()
+});
+// Oculta tornillos superiores o inferiores según mástil o puente y cambia entre cobertor mástil y puente //
+$("#Posición").change(function() {
+  if ($(this).val() == "Mástil" && $("#Cobertor").val() == "Alpaca Rus6") {
+    $('#coverAlpRustica6n').show().siblings().hide();
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').hide();
+    $('#torSup').show();
+    $('#torInf').hide();
+  } else if ($(this).val() == "Puente" && $("#Cobertor").val() == "Alpaca Rus6") {
+    $('#coverAlpRustica6b').show().siblings().hide();
+    $('#tornilloSupDiv').hide();
+    $('#tornilloInfDiv').show();
+    $('#torSup').hide();
+    $('#torInf').show();
+  }
+});
+$("#Posición").trigger("change");
+// Oculta tornillos superiores y/o inferiores según cobertor y las opciones del formulario //
+$("#Cobertor").change(function() {
+  if ($(this).val() == "Alpaca Rus12" && $("#tornilloSup").val() == "Sólidos" && $("#tornilloInf").val() == "Sólidos") {
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torSupRanurado2').show().siblings().hide();
+    $('#torInfRanurado2').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus6" && $("#Posición").val() == "Mástil" && $("#tornilloSup").val() == "Sólidos") {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').hide();
+    $('#torSup').show();
+    $('#torInf').hide();
+    $('#torSupRanurado2').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus6" && $("#Posición").val() == "Mástil" && $("#tornilloSup").val() == "RanuraNiq") {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').hide();
+    $('#torSup').show();
+    $('#torInf').hide();
+    $('#torSupRanurado2').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus6" && $("#Posición").val() == "Mástil" && $("#tornilloSup").val() == "AllenNiq") {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').hide();
+    $('#torSup').show();
+    $('#torSup').hide();
+    $('#torSupAllen2').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus6" && $("#Posición").val() == "Mástil" && $("#tornilloSup").val() == "AllenNeg") {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').hide();
+    $('#torSup').show();
+    $('#torSup').hide();
+    $('#torSupAllenNegro2').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus6" && $("#Posición").val() == "Puente" && $("#tornilloInf").val() == "Sólidos") {
+    $('#tornilloSupDiv').hide();
+    $('#tornilloInfDiv').show();
+    $('#torSup').hide();
+    $('#torInf').show();
+    $('#torInfRanurado2').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus6" && $("#Posición").val() == "Puente" && $("#tornilloInf").val() == "RanuraNiq") {
+    $('#tornilloSupDiv').hide();
+    $('#tornilloInfDiv').show();
+    $('#torSup').hide();
+    $('#torInf').show();
+    $('#torInfRanurado2').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus6" && $("#Posición").val() == "Puente" && $("#tornilloInf").val() == "AllenNiq") {
+    $('#tornilloSupDiv').hide();
+    $('#tornilloInfDiv').show();
+    $('#torSup').hide();
+    $('#torInf').show();
+    $('#torInfAllen2').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus6" && $("#Posición").val() == "Puente" && $("#tornilloInf").val() == "AllenNeg") {
+    $('#tornilloSupDiv').hide();
+    $('#tornilloInfDiv').show();
+    $('#torSup').hide();
+    $('#torInf').show();
+    $('#torInfAllenNegro2').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloSup").val() == "Sólidos" && $("#tornilloInf").val() == "Sólidos")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torSupSolido').show().siblings().hide();
+    $('#torInfSolido').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloSup").val() == "RanuraNiq" && $("#tornilloInf").val() == "RanuraNiq")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torSupRanurado').show().siblings().hide();
+    $('#torInfRanurado').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloSup").val() == "AllenNiq" && $("#tornilloInf").val() == "AllenNiq")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torSupAllen').show().siblings().hide();
+    $('#torInfAllen').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloSup").val() == "AllenNeg" && $("#tornilloInf").val() == "AllenNeg")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torSupAllenNegro').show().siblings().hide();
+    $('#torInfAllenNegro').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloSup").val() == "Sólidos")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torSupSolido').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloSup").val() == "RanuraNiq")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torSupRanurado').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloSup").val() == "AllenNiq")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torSupAllen').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloSup").val() == "AllenNeg")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torSupAllenNegro').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloInf").val() == "Sólidos")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torInfSolido').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloInf").val() == "RanuraNiq")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torInfRanurado').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloInf").val() == "AllenNiq")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torInfAllen').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno" && ($("#tornilloInf").val() == "AllenNeg")) {
+    $('#tornilloSupDiv').show();
+    $('#tornilloInfDiv').show();
+    $('#torSup').show();
+    $('#torInf').show();
+    $('#torInfAllenNegro').show().siblings().hide();
+  } else {
+    $('#tornilloSupDiv').hide();
+    $('#tornilloInfDiv').hide();
+    $('#torSup').hide();
+    $('#torInf').hide();
+  }
+});
+$("#Cobertor").trigger("change");
+// Oculta o muestra color de bobina según tipo de cobertor //
+$("#Cobertor").change(function() {
+  if ($(this).val() == "Ninguno" || $(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor") {
+    $('#colorSupDiv').show();
+    $('#colorInfDiv').show();
+    $('#colorSup').show();
+    $('#colorInf').show();
+  } else {
+    $('#colorSupDiv').hide();
+    $('#colorInfDiv').hide();
+    $('#colorSup').hide();
+    $('#colorInf').hide();
+  }
+});
+$("#Cobertor").trigger("change");
+// Cambia foto de tornillos //
+$("#tornilloSup").change(function() {
+  if ($(this).val() == "Sólidos") {
+    $('#torSupSolido').show().siblings().hide();
+  } else if ($(this).val() == "RanuraNiq" && $("#Cobertor").val() == "Alpaca Rus6") {
+    $('#torSupRanurado2').show().siblings().hide();
+  } else if ($(this).val() == "RanuraNiq" && $("#Cobertor").val() == "Alpaca Rus12") {
+    $('#torSupRanurado2').show().siblings().hide();
+  } else if ($(this).val() == "RanuraNiq") {
+    $('#torSupRanurado').show().siblings().hide();
+  } else if ($(this).val() == "AllenNiq" && $("#Cobertor").val() == "Alpaca Rus6") {
+    $('#torSupAllen2').show().siblings().hide();
+  } else if ($(this).val() == "AllenNiq" && $("#Cobertor").val() == "Alpaca Rus12") {
+    $('#torSupAllen2').show().siblings().hide();
+  } else if ($(this).val() == "AllenNiq") {
+    $('#torSupAllen').show().siblings().hide();
+  } else if ($(this).val() == "AllenNeg" && $("#Cobertor").val() == "Alpaca Rus6") {
+    $('#torSupAllenNegro2').show().siblings().hide();
+  } else if ($(this).val() == "AllenNeg" && $("#Cobertor").val() == "Alpaca Rus12") {
+    $('#torSupAllenNegro2').show().siblings().hide();
+  } else if ($(this).val() == "AllenNeg") {
+    $('#torSupAllenNegro').show().siblings().hide();
+  }
+});
+$("#tornilloSup").trigger("change");
+$("#tornilloInf").change(function() {
+  if ($(this).val() == "Sólidos") {
+    $('#torInfSolido').show().siblings().hide();
+  } else if ($(this).val() == "RanuraNiq" && $("#Cobertor").val() == "Alpaca Rus6") {
+    $('#torInfRanurado2').show().siblings().hide();
+  } else if ($(this).val() == "RanuraNiq" && $("#Cobertor").val() == "Alpaca Rus12") {
+    $('#torInfRanurado2').show().siblings().hide();
+  } else if ($(this).val() == "RanuraNiq") {
+    $('#torInfRanurado').show().siblings().hide();
+  } else if ($(this).val() == "AllenNiq" && $("#Cobertor").val() == "Alpaca Rus6") {
+    $('#torInfAllen2').show().siblings().hide();
+  } else if ($(this).val() == "AllenNiq" && $("#Cobertor").val() == "Alpaca Rus12") {
+    $('#torInfAllen2').show().siblings().hide();
+  } else if ($(this).val() == "AllenNiq") {
+    $('#torInfAllen').show().siblings().hide();
+  } else if ($(this).val() == "AllenNeg" && $("#Cobertor").val() == "Alpaca Rus6") {
+    $('#torInfAllenNegro2').show().siblings().hide();
+  } else if ($(this).val() == "AllenNeg" && $("#Cobertor").val() == "Alpaca Rus12") {
+    $('#torInfAllenNegro2').show().siblings().hide();
+  } else if ($(this).val() == "AllenNeg") {
+    $('#torInfAllenNegro').show().siblings().hide();
+  }
+});
+$("#tornilloInf").trigger("change");
+// Cambia foto de cobertores //
+$("#Cobertor").change(function() {
+  if ($(this).val() == "Alpaca Pul") {
+    $('#coverAlpPulida').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Nat") {
+    $('#coverAlpNatural').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus") {
+    $('#coverAlpRustica').show().siblings().hide();
+  } else if ($(this).val() == "Dorado") {
+    $('#coverDorado').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus6" && $("#Posición").val() == "Mástil") {
+    $('#coverAlpRustica6n').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus6" && $("#Posición").val() == "Puente") {
+    $('#coverAlpRustica6b').show().siblings().hide();
+  } else if ($(this).val() == "Alpaca Rus12") {
+    $('#coverAlpRustica12').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Cro") {
+    $('#coverAbiCromado').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Fla") {
+    $('#coverAbiFlameado').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Niq") {
+    $('#coverAbiNiquelado').show().siblings().hide();
+  } else if ($(this).val() == "Abierto Dor") {
+    $('#coverAbiDorado').show().siblings().hide();
+  } else {
+    $('#coverAbiDorado').hide().siblings().hide();
+  }
+});
+$("#Cobertor").trigger("change");
+// Quita logo en abiertos//
+$("#Cobertor").change(function() {
+  if ($(this).val() != "Alpaca Pul" && $(this).val() != "Alpaca Nat" && $(this).val() != "Alpaca Rus" && $(this).val() != "Alpaca Rus6" && $(this).val() != "Alpaca Rus12" && $(this).val() != "Dorado" && $("#ColorInf").val() == "Blanco") {
+    $('#colorInfBlanco2').show().siblings().hide();
+  } else if ($("#ColorInf").val() == "Blanco") {
+    $('#colorInfBlanco').show().siblings().hide();
+  } else if ($(this).val() != "Alpaca Pul" && $(this).val() != "Alpaca Nat" && $(this).val() != "Alpaca Rus" && $(this).val() != "Alpaca Rus6" && $(this).val() != "Alpaca Rus12" && $(this).val() != "Dorado" && $("#ColorInf").val() == "Negro") {
+    $('#colorInfNegro2').show().siblings().hide();
+  } else if ($("#ColorInf").val() == "Negro") {
+    $('#colorInfNegro').show().siblings().hide();
+  } else if ($(this).val() != "Alpaca Pul" && $(this).val() != "Alpaca Nat" && $(this).val() != "Alpaca Rus" && $(this).val() != "Alpaca Rus6" && $(this).val() != "Alpaca Rus12" && $(this).val() != "Dorado" && $("#ColorInf").val() == "Marfil") {
+    $('#colorInfMarfil2').show().siblings().hide();
+  } else if ($("#ColorInf").val() == "Marfil") {
+    $('#colorInfMarfil').show().siblings().hide();
+  } else if ($(this).val() != "Alpaca Pul" && $(this).val() != "Alpaca Nat" && $(this).val() != "Alpaca Rus" && $(this).val() != "Alpaca Rus6" && $(this).val() != "Alpaca Rus12" && $(this).val() != "Dorado" && $("#ColorInf").val() == "Crema") {
+    $('#colorInfCrema2').show().siblings().hide();
+  } else if ($("#ColorInf").val() == "Crema") {
+    $('#colorInfCrema').show().siblings().hide();
+  } else if ($(this).val() != "Alpaca Pul" && $(this).val() != "Alpaca Nat" && $(this).val() != "Alpaca Rus" && $(this).val() != "Alpaca Rus6" && $(this).val() != "Alpaca Rus12" && $(this).val() != "Dorado" && $("#ColorInf").val() == "Verdoso") {
+    $('#colorInfVerdoso2').show().siblings().hide();
+  } else if ($("#ColorInf").val() == "Verdoso") {
+    $('#colorInfVerdoso').show().siblings().hide();
+  } else if ($(this).val() != "Alpaca Pul" && $(this).val() != "Alpaca Nat" && $(this).val() != "Alpaca Rus" && $(this).val() != "Alpaca Rus6" && $(this).val() != "Alpaca Rus12" && $(this).val() != "Dorado" && $("#ColorInf").val() == "Amarillo") {
+    $('#colorInfAmarillo2').show().siblings().hide();
+  } else if ($("#ColorInf").val() == "Amarillo") {
+    $('#colorInfAmarillo').show().siblings().hide();
+  } else if ($(this).val() != "Alpaca Pul" && $(this).val() != "Alpaca Nat" && $(this).val() != "Alpaca Rus" && $(this).val() != "Alpaca Rus6" && $(this).val() != "Alpaca Rus12" && $(this).val() != "Dorado" && $("#ColorInf").val() == "Verde") {
+    $('#colorInfVerde2').show().siblings().hide();
+  } else if ($("#ColorInf").val() == "Verde") {
+    $('#colorInfVerde').show().siblings().hide();
+  } else if ($(this).val() != "Alpaca Pul" && $(this).val() != "Alpaca Nat" && $(this).val() != "Alpaca Rus" && $(this).val() != "Alpaca Rus6" && $(this).val() != "Alpaca Rus12" && $(this).val() != "Dorado" && $("#ColorInf").val() == "Rosa") {
+    $('#colorInfRosa2').show().siblings().hide();
+  } else if ($("#ColorInf").val() == "Rosa") {
+    $('#colorInfRosa').show().siblings().hide();
+  } else if ($(this).val() != "Alpaca Pul" && $(this).val() != "Alpaca Nat" && $(this).val() != "Alpaca Rus" && $(this).val() != "Alpaca Rus6" && $(this).val() != "Alpaca Rus12" && $(this).val() != "Dorado" && $("#ColorInf").val() == "Turquesa") {
+    $('#colorInfTurquesa2').show().siblings().hide();
+  } else if ($("#ColorInf").val() == "Turquesa") {
+    $('#colorInfTurquesa').show().siblings().hide();
+  } else if ($(this).val() != "Alpaca Pul" && $(this).val() != "Alpaca Nat" && $(this).val() != "Alpaca Rus" && $(this).val() != "Alpaca Rus6" && $(this).val() != "Alpaca Rus12" && $(this).val() != "Dorado" && $("#ColorInf").val() == "Azul") {
+    $('#colorInfAzul2').show().siblings().hide();
+  } else if ($("#ColorInf").val() == "Azul") {
+    $('#colorInfAzul').show().siblings().hide();
+  }
+});
+$("#Cobertor").trigger("change");
+// Cambia color de bobina superior//
+$("#ColorSup").change(function() {
+  if ($(this).val() == "Blanco") {
+    $('#colorSupBlanco').show().siblings().hide();
+  } else if ($(this).val() == "Negro") {
+    $('#colorSupNegro').show().siblings().hide();
+  } else if ($(this).val() == "Marfil") {
+    $('#colorSupMarfil').show().siblings().hide();
+  } else if ($(this).val() == "Crema") {
+    $('#colorSupCrema').show().siblings().hide();
+  } else if ($(this).val() == "Verdoso") {
+    $('#colorSupVerdoso').show().siblings().hide();
+  } else if ($(this).val() == "Amarillo") {
+    $('#colorSupAmarillo').show().siblings().hide();
+  } else if ($(this).val() == "Verde") {
+    $('#colorSupVerde').show().siblings().hide();
+  } else if ($(this).val() == "Rosa") {
+    $('#colorSupRosa').show().siblings().hide();
+  } else if ($(this).val() == "Turquesa") {
+    $('#colorSupTurquesa').show().siblings().hide();
+  } else if ($(this).val() == "Azul") {
+    $('#colorSupAzul').show().siblings().hide();
+  }
+});
+$("#ColorSup").trigger("change");
+// Cambia color de bobina inferior y quita logo en abiertos//
+$("#ColorInf").change(function() {
+  if ($(this).val() == "Blanco" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
+    $('#colorInfBlanco2').show().siblings().hide();
+  } else if ($(this).val() == "Blanco") {
+    $('#colorInfBlanco').show().siblings().hide();
+  } else if ($(this).val() == "Negro" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
+    $('#colorInfNegro2').show().siblings().hide();
+  } else if ($(this).val() == "Negro") {
+    $('#colorInfNegro').show().siblings().hide();
+  } else if ($(this).val() == "Marfil" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
+    $('#colorInfMarfil2').show().siblings().hide();
+  } else if ($(this).val() == "Marfil") {
+    $('#colorInfMarfil').show().siblings().hide();
+  } else if ($(this).val() == "Crema" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
+    $('#colorInfCrema2').show().siblings().hide();
+  } else if ($(this).val() == "Crema") {
+    $('#colorInfCrema').show().siblings().hide();
+  } else if ($(this).val() == "Verdoso" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
+    $('#colorInfVerdoso2').show().siblings().hide();
+  } else if ($(this).val() == "Verdoso") {
+    $('#colorInfVerdoso').show().siblings().hide();
+  } else if ($(this).val() == "Amarillo" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
+    $('#colorInfAmarillo2').show().siblings().hide();
+  } else if ($(this).val() == "Amarillo") {
+    $('#colorInfAmarillo').show().siblings().hide();
+  } else if ($(this).val() == "Verde" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
+    $('#colorInfVerde2').show().siblings().hide();
+  } else if ($(this).val() == "Verde") {
+    $('#colorInfVerde').show().siblings().hide();
+  } else if ($(this).val() == "Rosa" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
+    $('#colorInfRosa2').show().siblings().hide();
+  } else if ($(this).val() == "Rosa") {
+    $('#colorInfRosa').show().siblings().hide();
+  } else if ($(this).val() == "Turquesa" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
+    $('#colorInfTurquesa2').show().siblings().hide();
+  } else if ($(this).val() == "Turquesa") {
+    $('#colorInfTurquesa').show().siblings().hide();
+  } else if ($(this).val() == "Azul" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
+    $('#colorInfAzul2').show().siblings().hide();
+  } else if ($(this).val() == "Azul") {
+    $('#colorInfAzul').show().siblings().hide();
+  }
+});
+$("#ColorInf").trigger("change");
+// Cambia descripción por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "P-Classic" && ($("#Imán").val() == "Alnico 2")) {
+    $('#ds30a2').show().siblings().hide();
+  } else if ($(this).val() == "P-Classic" && ($("#Imán").val() == "Alnico 5")) {
+    $('#ds30a5').show().siblings().hide();
+  } else if ($(this).val() == "P-Classic" && ($("#Imán").val() == "Alnico 8")) {
+    $('#ds30a8').show().siblings().hide();
+  } else if ($(this).val() == "P-Classic" && ($("#Imán").val() == "Cerámico")) {
+    $('#ds30ce').show().siblings().hide();
+  } else {
+    $('#coverAbiDorado').hide().siblings().hide();
+  }
+});
+$("#Modelo").trigger("change");
+// Cambia descripción por Imán //
+$("#Imán").change(function() {
+  if ($(this).val() == "Alnico 2" && ($("#Modelo").val() == "P-Classic")) {
+    $('#ds30a2').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && ($("#Modelo").val() == "P-Classic")) {
+    $('#ds30a5').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 8" && ($("#Modelo").val() == "P-Classic")) {
+    $('#ds30a8').show().siblings().hide();
+  } else if ($(this).val() == "Cerámico" && ($("#Modelo").val() == "P-Classic")) {
+    $('#ds30ce').show().siblings().hide();
+  } else {
+    $('#coverAbiDorado').hide().siblings().hide();
+  }
+});
+$("#Imán").trigger("change");
+</script>
