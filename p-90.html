@@ -1,0 +1,243 @@
+<style>
+body {
+  background-color: #f5f5f5;
+}
+form {
+  display: block;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #725742;
+}
+.form-control {
+  width: 450px;
+  min-height: 40px;
+  border: 1px solid #b89c88;
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+}
+#comments.form-control {
+  height: 200px;
+  overflow: scroll;
+}
+.base-bg {
+  position: fixed;
+  z-index: 998;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 448px;
+  height: 320px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #b89c88;
+}
+.colorSupInf {
+  position: fixed;
+  z-index: 1000;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.tornilloSupInf {
+  position: fixed;
+  z-index: 1001;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.boton-cotizar {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  width: 300px;
+  height: 40px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: #725742;
+}
+.boton-cotizar:hover {
+  background-color: #97775f;
+}
+.bottom-spacer {
+  height: 360px;
+}
+.descripcion {
+  width: 700px;
+  text-align: justify;
+}
+</style>
+<form class="form">
+  <div class="form-group">
+    <label for="Posición">Posición</label>
+    <select class="form-control" id="Posición" name="Posición">
+      <option value="Mástil">Mástil</option>
+      <option value="Puente">Puente</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Imán">Tipo de imantación</label>
+    <select class="form-control" id="Imán" name="Imán">
+      <option value="Alnico 2">Alnico 2</option>
+      <option value="Alnico 5">Alnico 5</option>
+      <option value="Alnico 8">Alnico 8</option>
+      <option value="Cerámico">Cerámico</option>
+    </select>
+  </div>
+  <div class="form-group" id="colorDiv">
+    <label for="Color">Cobertor</label>
+    <select class="form-control" id="Color" name="Color">
+      <option value="Soapbar Negro">Soapbar Negro</option>
+      <option value="Soapbar Blanco">Soapbar Blanco</option>
+      <option value="Soapbar Crema">Soapbar Crema</option>
+      <option value="Soapbar Cromado">Soapbar Cromado</option>
+      <option value="Dog-ear Negro">Dog-ear Negro</option>
+      <option value="Dog-ear Crema">Dog-ear Crema</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Nombre">Nombre</label>
+    <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+  </div>
+  <div class="form-group">
+    <label for="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">E-mail</label>
+    <input type="email" class="form-control" id="E-Mail" name="E-Mail" required>
+  </div>
+  <div class="form-group">
+    <label for="Comments">¿Comentarios o preguntas?</label>
+    <textarea class="form-control" id="Comments" rows="5" name="Comentarios"></textarea>
+  </div>
+  <button type="submit" class="boton-cotizar">COTIZAR</button>
+  <div class="descripcion">
+    <div id="ds70desc"><p>El tono es dulce y cremoso con agresivo ataque. El formato de bobina ancho y petiso ofrece un marcado rango de tonos medios en comparación con cualquier otro modelo simple bobina. Nuestro diseño exclusivo de multi-ALNICO system, combina en un mismo micrófono 6 núcleos individuales de ALNICO 2 junto a dos barras de ALNICO 2, resultando en acordes cálidos con definidos medios y notas que emergen de forma más agresiva y cristalina sin sonar en absoluto hiriente. Este modelo es un reemplazo directo de cualquier Gibson® P-90 estándar. Ambas versiones para mástil y puente están bobinadas e imantadas en sentido invertido para obtener cancelación de ruido en la posición intermedia de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 12,3K (mástil) y 14K (puente)</li>
+        <li>PICO DE RESONANCIA: 2,28KHz (mástil) y 2,08KHz (puente)</li>
+        <li>INDUCTANCIA: 5,81 Henries (mástil) y 7,09 Henries (puente)</li>
+        <li>IMANTACIÓN: 6 núcleos de ALNICO 2 biselados manualmente + 2 barras de ALNICO 2</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: 2 conductores + malla</li>
+        <li>BASE: Shielded CEM1.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds71desc"><p>P-90 que ofrece un tono más cristalino y definido que el P-90 II. El formato de bobina ancho y petiso combinado con nuestro diseño exclusivo de multi-ALNICO system, el cual presenta en un mismo micrófono 6 núcleos individuales de ALNICO 2 junto a dos barras de ALNICO 5, ofrecen un poderoso sonido twangy con medios marcados y gran ataque. Este modelo es un reemplazo directo de cualquier Gibson® P-90 estándar. Ambas versiones para mástil y puente están bobinadas e imantadas en sentido invertido para obtener cancelación de ruido en la posición intermedia de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 12,9K (mástil) y 14K (puente)</li>
+        <li>PICO DE RESONANCIA: 2,3KHz (mástil) y 2,15KHz (puente)</li>
+        <li>INDUCTANCIA: 5,62 Henries (mástil) y 6,92 Henries (puente)</li>
+        <li>IMANTACIÓN: 6 núcleos de ALNICO 2 biselados manualmente + 2 barras de ALNICO 5</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: 2 conductores + malla</li>
+        <li>BASE: Shielded CEM1.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds72desc"><p>P-90 “hot rod” que ofrece mayor claridad en los rangos medios y refuerza la definición en agudos para atravesar la mezcla de forma contundente. Dos barras cerámicas imantadas al 100% y seis núcleos individuales biselados de forma manual, producen gran sensibilidad al menor movimiento de las cuerdas haciendo de este modelo nuestro más agresivo P-90 simple bobina. Este micrófono es un reemplazo directo de cualquier Gibson® P-90 estándar. Ambas versiones para mástil y puente están bobinadas e imantadas en sentido invertido para obtener cancelación de ruido en la posición intermedia de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 12,4K (mástil) y 14K (puente)</li>
+        <li>PICO DE RESONANCIA: 2,38KHz (mástil) y 2,23KHz (puente)</li>
+        <li>INDUCTANCIA: 5,2 Henries (mástil) y 6,45 Henries (puente)</li>
+        <li>IMANTACIÓN: 6 núcleos de ALNICO 2 biselados manualmente + 2 barras CERÁMICAS</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: 2 conductores + malla</li>
+        <li>BASE: Shielded CEM1.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds73desc"><p>P-90 “hot rod” que combina núcleos de ALNICO II con 2 barras de ALNICO 8 para generar la claridad típica de la imantación cerámica junto a la mayor calidez y sustain del ALNICO. El modelo combina agresividad en su bobinado con una más cálida respuesta en agudos, focalizadas frecuencias medias y más definidos graves con increíble poder. Este micrófono único en cuanto a su combinación de imanes, es un reemplazo directo de cualquier Gibson® P-90 estándar. Ambas versiones para mástil y puente están bobinadas e imantadas en sentido invertido para obtener cancelación de ruido en la posición intermedia de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 12,4K (mástil) y 14K (puente)</li>
+        <li>PICO DE RESONANCIA: 2,38KHz (mástil) y 2,23KHz (puente)</li>
+        <li>INDUCTANCIA: 5,2 Henries (mástil) y 6,45 Henries (puente)</li>
+        <li>IMANTACIÓN: 6 núcleos de ALNICO 2 biselados manualmente + 2 barras de ALNICO 8</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: 2 conductores + malla</li>
+        <li>BASE: Shielded CEM1.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+  </div>
+</form>
+<div class="bottom-spacer"></div>
+<div class="base-bg" id="base-bg">
+</div>
+<div class="colorSupInf" id="fotojazz">
+  <img src="http://www.dspickups.com.ar/builder/p90/p90soapBk.png" class="colorSupInf" id="p90soapBk">
+  <img src="http://www.dspickups.com.ar/builder/p90/p90soapWh.png" class="colorSupInf" id="p90soapWh">
+  <img src="http://www.dspickups.com.ar/builder/p90/p90soapCr.png" class="colorSupInf" id="p90soapCr">
+  <img src="http://www.dspickups.com.ar/builder/p90/p90soapCh.png" class="colorSupInf" id="p90soapCh">
+  <img src="http://www.dspickups.com.ar/builder/p90/p90dogearBk.png" class="colorSupInf" id="p90dogearBk">
+  <img src="http://www.dspickups.com.ar/builder/p90/p90dogearCr.png" class="colorSupInf" id="p90dogearCr">
+</div>
+<div class="tornilloSupInf" id="fotojazz">
+  <img src="http://www.dspickups.com.ar/builder/p90/p90torAlnico.png" class="tornilloSupInf" id="p90torAlnico">
+  <img src="http://www.dspickups.com.ar/builder/p90/p90torCeramico.png" class="tornilloSupInf" id="p90torCeramico">
+</div>
+<script type="text/javascript">
+// Muestra la primera imagen //
+$(function(){
+  $('#p90soapBk').show().siblings().hide()
+  $('#p90torAlnico').show().siblings().hide()
+});
+// Cambia imagen por cobertor //
+$("#Color").change(function() {
+  if ($(this).val() == "Soapbar Negro") {
+    $('#p90soapBk').show().siblings().hide();
+  } else if ($(this).val() == "Soapbar Blanco") {
+    $('#p90soapWh').show().siblings().hide();
+  } else if ($(this).val() == "Soapbar Crema") {
+    $('#p90soapCr').show().siblings().hide();
+  } else if ($(this).val() == "Soapbar Cromado") {
+    $('#p90soapCh').show().siblings().hide();
+  } else if ($(this).val() == "Dog-ear Negro") {
+    $('#p90dogearBk').show().siblings().hide();
+  } else if ($(this).val() == "Dog-ear Crema") {
+    $('#p90dogearCr').show().siblings().hide();
+  }
+});
+$("#Color").trigger("change");
+// Cambia imagen de imán //
+$("#Imán").change(function() {
+  if ($(this).val() == "Alnico 2" || $(this).val() == "Alnico 5" || $(this).val() == "Alnico 8") {
+    $('#p90torAlnico').show().siblings().hide();
+  } else if ($(this).val() == "Cerámico") {
+    $('#p90torCeramico').show().siblings().hide();
+  }
+});
+$("#Imán").trigger("change");
+// Cambia descripción //
+$("#Imán").change(function() {
+  if ($(this).val() == "Alnico 2") {
+    $('#ds70desc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5") {
+    $('#ds71desc').show().siblings().hide();
+  } else if ($(this).val() == "Cerámico") {
+    $('#ds72desc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 8") {
+    $('#ds73desc').show().siblings().hide();
+  }
+});
+$("#Imán").trigger("change");
+</script>
