@@ -1,0 +1,218 @@
+<style>
+body {
+  background-color: #f5f5f5;
+}
+form {
+  display: block;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #725742;
+}
+.form-control {
+  width: 450px;
+  min-height: 40px;
+  border: 1px solid #b89c88;
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+}
+#comments.form-control {
+  height: 200px;
+  overflow: scroll;
+}
+.base-bg {
+  position: fixed;
+  z-index: 998;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 448px;
+  height: 320px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #b89c88;
+}
+.colorSupInf {
+  position: fixed;
+  z-index: 1000;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.boton-cotizar {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  width: 300px;
+  height: 40px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: #725742;
+}
+.boton-cotizar:hover {
+  background-color: #97775f;
+}
+.bottom-spacer {
+  height: 360px;
+}
+.descripcion {
+  width: 700px;
+  text-align: justify;
+}
+</style>
+<form class="form">
+  <div class="form-group">
+    <label for="Modelo">Modelo</label>
+    <select class="form-control" id="Modelo" name="Modelo">
+      <option value="Jazzmaster Classic">Jazzmaster ® Classic</option>
+      <option value="Jazzmaster Hot">Jazzmaster ® Hot</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Posición">Posición</label>
+    <select class="form-control" id="Posición" name="Posición">
+      <option value="Mástil">Mástil</option>
+      <option value="Puente">Puente</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Imán">Tipo de imantación</label>
+    <select class="form-control" id="Imán" name="Imán">
+      <option value="Alnico 2">Alnico 2</option>
+      <option value="Alnico 5">Alnico 5</option>
+    </select>
+  </div>
+  <div class="form-group" id="colorDiv">
+    <label for="Color">Color</label>
+    <select class="form-control" id="Color" name="Color">
+      <option value="Marfil">Marfil</option>
+      <option value="Negro">Negro</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Nombre">Nombre</label>
+    <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+  </div>
+  <div class="form-group">
+    <label for="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">E-mail</label>
+    <input type="email" class="form-control" id="E-Mail" name="E-Mail" required>
+  </div>
+  <div class="form-group">
+    <label for="Comments">¿Comentarios o preguntas?</label>
+    <textarea class="form-control" id="Comments" rows="5" name="Comentarios"></textarea>
+  </div>
+  <button type="submit" class="boton-cotizar">COTIZAR</button>
+  <div class="descripcion">
+    <div id="ds76desc"><p>Micrófono simple bobina vintage que ofrece el tono clásico de fines de los 50’s. Este Jazzmaster® te dará ese sonido “surf” brillante con ataque y graves definidos. El modelo del mástil ofrece polaridad y sentido de bobinado invertido en comparación con el del puente para obtener cancelación de ruido cuando son conectados de forma conjunta. Ambas versiones para mástil y puente están compensadas para producir un nivel de salida balanceado. Construidos en el color y el espesor característicos de fibra vulcanizada, este micrófono es un reemplazo directo para cualquier guitarra Fender® American Standard Jazzmaster®. Orgullosamente fabricado en Florida-BA, es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 7,1K (mástil) y 7,6K (puente)</li>
+        <li>PICO DE RESONANCIA: 3,87KHz (mástil) y 3,6KHz (puente)</li>
+        <li>INDUCTANCIA: 3,05 Henries (mástil) y 3,62 Henries (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds76iidesc"><p>Micrófono simple bobina en ALNICO 2 que ofrece un tono más dulce y poroso que el  clásico modelo de fines de los 50’s. Este Jazzmaster® te dará ese sonido “surf” con graves precisos y mayor sustain. El modelo del mástil ofrece polaridad y sentido de bobinado invertido en comparación con el del puente para obtener cancelación de ruido cuando son conectados de forma conjunta. Ambas versiones para mástil y puente están compensadas para producir un nivel de salida balanceado. Construidos en el color y el espesor característicos de fibra vulcanizada, este micrófono es un reemplazo directo para cualquier guitarra Fender® American Standard Jazzmaster®. Orgullosamente fabricado en Florida-BA, es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 7,1K (mástil) y 7,6K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds77desc"><p>Simple bobina extra bobinado para guitarras Jazzmaster® que ofrece marcados medios con suaves agudos y agresivo ataque. Este micrófono produce un sonido más gordo, con mejores graves definidos y mayor nivel de salida que el DS76. El modelo del mástil presenta polaridad y sentido de bobinado invertido en comparación con el del puente para obtener cancelación de ruido cuando son conectados de forma conjunta. Ambas versiones para mástil y puente están compensadas para producir un nivel de salida balanceado. Construidos en el color y el espesor característicos de fibra vulcanizada, este micrófono es un reemplazo directo para cualquier guitarra Fender® American Standard Jazzmaster®. Orgullosamente fabricado en Florida-BA, es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 11,7K (mástil) y 14,3K (puente)</li>
+        <li>PICO DE RESONANCIA: 3,4KHz (mástil) y 2,8KHz (puente)</li>
+        <li>INDUCTANCIA: 4,06 Henries (mástil) y 6,03 Henries (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds77iidesc"><p>Simple bobina extra bobinado en ALNICO 2 para guitarras Jazzmaster® que ofrece marcados medios con suaves agudos y agresivo ataque. Este micrófono produce un sonido más gordo, con mejores graves definidos y mayor nivel de salida que el DS76-II. El modelo del mástil presenta polaridad y sentido de bobinado invertido en comparación con el del puente para obtener cancelación de ruido cuando son conectados de forma conjunta. Ambas versiones para mástil y puente están compensadas para producir un nivel de salida balanceado. Construidos en el color y el espesor característicos de fibra vulcanizada, este micrófono es un reemplazo directo para cualquier guitarra Fender® American Standard Jazzmaster®. Orgullosamente fabricado en Florida-BA, es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 11,7K (mástil) y 14,3K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+  </div>
+</form>
+<div class="bottom-spacer"></div>
+<div class="base-bg" id="base-bg">
+</div>
+<div class="colorSupInf" id="fotojazz">
+  <img src="http://www.dspickups.com.ar/builder/jazzmaster/jazzmasterBk.png" class="colorSupInf" id="jazzmasterBk">
+  <img src="http://www.dspickups.com.ar/builder/jazzmaster/jazzmasterIv.png" class="colorSupInf" id="jazzmasterIv">
+</div>
+<script type="text/javascript">
+// Muestra la primera imagen //
+$(function(){
+  $('#jazzmasterIv').show().siblings().hide()
+});
+// Cambia imagen por color //
+$("#Color").change(function() {
+  if ($(this).val() == "Marfil") {
+    $('#jazzmasterIv').show().siblings().hide();
+  } else if ($(this).val() == "Negro") {
+    $('#jazzmasterBk').show().siblings().hide();
+  }
+});
+$("#Color").trigger("change");
+// Cambia descripción por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "Jazzmaster Classic" && $("#Imán").val() == "Alnico 5") {
+    $('#ds76desc').show().siblings().hide();
+  } else if ($(this).val() == "Jazzmaster Classic" && $("#Imán").val() == "Alnico 2") {
+    $('#ds76iidesc').show().siblings().hide();
+  } else if ($(this).val() == "Jazzmaster Hot" && $("#Imán").val() == "Alnico 5") {
+    $('#ds77desc').show().siblings().hide();
+  } else if ($(this).val() == "Jazzmaster Hot" && $("#Imán").val() == "Alnico 2") {
+    $('#ds77iidesc').show().siblings().hide();
+  }
+});
+$("#Modelo").trigger("change");
+// Cambia descripción por imán //
+$("#Imán").change(function() {
+  if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "Jazzmaster Classic") {
+    $('#ds76desc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Modelo").val() == "Jazzmaster Classic") {
+    $('#ds76iidesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "Jazzmaster Hot") {
+    $('#ds77desc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Modelo").val() == "Jazzmaster Hot") {
+    $('#ds77iidesc').show().siblings().hide();
+  }
+});
+$("#Imán").trigger("change");
+</script>
