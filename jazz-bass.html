@@ -1,0 +1,641 @@
+<style>
+body {
+  background-color: #f5f5f5;
+}
+form {
+  display: block;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #725742;
+}
+.form-control {
+  width: 450px;
+  min-height: 40px;
+  border: 1px solid #b89c88;
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+}
+#comments.form-control {
+  height: 200px;
+  overflow: scroll;
+}
+.base-bg {
+  position: fixed;
+  z-index: 998;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 448px;
+  height: 320px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #b89c88;
+}
+.colorSupInf {
+  position: fixed;
+  z-index: 1000;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.boton-cotizar {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  width: 300px;
+  height: 40px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: #725742;
+}
+.boton-cotizar:hover {
+  background-color: #97775f;
+}
+.bottom-spacer {
+  height: 360px;
+}
+.descripcion {
+  width: 700px;
+  text-align: justify;
+}
+</style>
+<form class="form">
+  <div class="form-group">
+    <label for="Modelo">Modelo</label>
+    <select class="form-control" id="Modelo" name="Modelo">
+      <option value="JB-Custom">Jazz Bass ® Custom</option>
+      <option value="JB-Hum-Custom">Jazz Bass ® Hum Custom</option>
+      <option value="JB-5">Jazz Bass ® 5 cuerdas</option>
+      <option value="JB-Hum-5">Jazz Bass ® Hum 5 cuerdas</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Posición">Posición</label>
+    <select class="form-control" id="Posición" name="Posición">
+      <option value="Set x2">Set x2</option>
+      <option value="Mástil">Mástil</option>
+      <option value="Puente">Puente</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Imán">Tipo de imantación</label>
+    <select class="form-control" id="Imán" name="Imán">
+      <option value="Alnico 2">Alnico 2</option>
+      <option value="Alnico 5">Alnico 5</option>
+    </select>
+  </div>
+  <div class="form-group" id="colorDiv">
+    <label for="Color">Color</label>
+    <select class="form-control" id="Color" name="Color">
+      <option value="Negro">Negro</option>
+      <option value="Crema">Crema</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Nombre">Nombre</label>
+    <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+  </div>
+  <div class="form-group">
+    <label for="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">E-mail</label>
+    <input type="email" class="form-control" id="E-Mail" name="E-Mail" required>
+  </div>
+  <div class="form-group">
+    <label for="Comments">¿Comentarios o preguntas?</label>
+    <textarea class="form-control" id="Comments" rows="5" name="Comentarios"></textarea>
+  </div>
+  <button type="submit" class="boton-cotizar">COTIZAR</button>
+  <div class="descripcion">
+    <div id="ds60andesc"><p>De tono cálido y dulce con mayor vibración natural de las cuerdas y enorme sustain, este modelo en ALNICO 2 es bobinado con la exacta cantidad de salida y definición sin resultar apagado u opaco. Comparado con el DS60-N, este Jazz Bass ® presenta mejor definición en el rango agudo, con más twang y ataque siendo que los núcleos de ALNICO se ubican más próximos a las cuerdas. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass ®. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 7,73K (mástil)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds60abdesc"><p>De tono cálido y dulce con mayor vibración natural de las cuerdas y enorme sustain, este modelo en ALNICO 2 es bobinado con la exacta cantidad de salida y definición sin resultar apagado u opaco. Comparado con el DS60-B, este Jazz Bass ® presenta mejor definición en el rango agudo, con más twang y ataque siendo que los núcleos de ALNICO se ubican más próximos a las cuerdas. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass ®. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds60adesc"><p>De tono cálido y dulce con mayor vibración natural de las cuerdas y enorme sustain, este set en ALNICO 2 es bobinado con la exacta cantidad de salida y definición sin resultar apagado u opaco. Comparado con el DS60, este set de Jazz Bass ® presenta mejor definición en el rango agudo, con más twang y ataque siendo que los núcleos de ALNICO se ubican más próximos a las cuerdas. Ambos micrófonos de mástil y puente son bobinados e imantados en sentido invertido para ofrecer cancelación de ruido cuando son conectados de forma conjunta. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass ®. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 7,73K (mástil) 8K (puente)</li>
+        <li>PICO DE RESONANCIA: 3,98KHz (bobinas en paralelo)</li>
+        <li>INDUCTANCIA: 1,76 Henries (bobinas en paralelo)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds61andesc"><p>Nuestro Jazz Bass ® Custom V Neck para mástil captura el tono vintage de esos bajos con la cantidad justa de graves, medios y definición en las notas agudas. Sus núcleos de ALNICO 5 y el bobinado moderado, hacen aparecer el carácter twangy, cálido y completo del instrumento siempre manteniendo claridad. Comparado con el DS61-N, este Jazz Bass ® presenta una más focalizada definición en agudos con mayor agresividad y ataque, siendo que los núcleos de ALNICO se ubican más próximos a las cuerdas. El micrófono viene equipado con el clásico cobertor de Jazz Bass ®, es construido en el color y el espesor característicos de fibra vulcanizada y es reemplazo directo para cualquier bajo American Standard Jazz Bass®. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 7,73K (mástil)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds61abdesc"><p>Nuestro Jazz Bass ® Custom V Bridge para puente captura el tono vintage de esos bajos con la cantidad justa de graves, medios y definición en las notas agudas. Sus núcleos de ALNICO 5 y el bobinado moderado, hacen aparecer el carácter twangy, cálido y completo del instrumento siempre manteniendo claridad. Comparado con el DS61-B, este Jazz Bass ® presenta una más focalizada definición en agudos con mayor agresividad y ataque, siendo que los núcleos de ALNICO se ubican más próximos a las cuerdas. El micrófono viene equipado con el clásico cobertor de Jazz Bass ®, es construido en el color y el espesor característicos de fibra vulcanizada y es reemplazo directo para cualquier bajo American Standard Jazz Bass®. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds61adesc"><p>Nuestro Jazz Bass ® Custom V Set captura el tono vintage de esos bajos con la cantidad justa de graves, medios y definición en las notas agudas. Sus núcleos de ALNICO 5 y el bobinado moderado, hacen aparecer el carácter twangy, cálido y completo del instrumento siempre manteniendo claridad. Comparado con el DS61, este set de Jazz Bass ® presenta una más focalizada definición en agudos con mayor agresividad y ataque, siendo que los núcleos de ALNICO se ubican más próximos a las cuerdas. Ambos micrófonos viene equipados con los clásicos cobertores de Jazz Bass ® y son bobinados e imantados en sentido invertido para ofrecer cancelación de ruido cuando son conectados de forma conjunta. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass ®. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 7,73K (mástil) 8K (puente)</li>
+        <li>PICO DE RESONANCIA: 3,8KHz (bobinas en paralelo)</li>
+        <li>INDUCTANCIA: 1,54 Henries (bobinas en paralelo)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds61iihndesc"><p>El Jazz Bass ® Hum Custom II Neck ofrece un tono más cálido y dulce comparado con el mismo modelo en ALNICO 5, con mejores medios-graves que los tradicionales modelos simple bobina y plena cancelación de ruido. Su estructura de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo doble en formato de simple es ideal para aquellos bajistas que buscan un tono innovador, pero conservando varias de las cualidades de los clásicos Jazz Bass. Construido en el color y el espesor característicos de fibra vulcanizada, este micrófono es un reemplazo directo para cualquier American Standard Jazz Bass ®. Orgullosamente fabricado en Florida-BA, el producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,27K (mástil)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds61iihbdesc"><p>El Jazz Bass ® Hum Custom II Bridge ofrece un tono más cálido y dulce comparado con el mismo modelo en ALNICO 5, con mejores medios-graves que los tradicionales modelos simple bobina y plena cancelación de ruido. Su estructura de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo doble en formato de simple es ideal para aquellos bajistas que buscan un tono innovador, pero conservando varias de las cualidades de los clásicos Jazz Bass. Construido en el color y el espesor característicos de fibra vulcanizada, este micrófono es un reemplazo directo para cualquier American Standard Jazz Bass ®. Orgullosamente fabricado en Florida-BA, el producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,34K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds61iihdesc"><p>El Jazz Bass ® Hum Custom II Set ofrece un tono más cálido y dulce comparado con el mismo modelo en ALNICO 5, con mejores medios-bajos que los tradicionales modelos simple bobina y plena cancelación de ruido. Su diseño de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo es ideal para aquellos bajistas que buscan un tono innovador, el cual conserva muchas de las características de los clásicos Jazz Bass. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass®. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,27K (mástil) 8,34K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds61hndesc"><p>El Jazz Bass ® Hum Custom V Neck ofrece un tono con mejores medios-graves que los tradicionales modelos simple bobina y plena cancelación de ruido. Su estructura de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo doble en formato de simple es ideal para aquellos bajistas que buscan un tono innovador, pero conservando varias de las cualidades de los clásicos Jazz Bass. Construido en el color y el espesor característicos de fibra vulcanizada, este micrófono es un reemplazo directo para cualquier American Standard Jazz Bass ®. Orgullosamente fabricado en Florida-BA, el producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,27K (mástil)</li>
+        <li>PICO DE RESONANCIA: 3KHz (mástil)</li>
+        <li>INDUCTANCIA: 3,25 Henries (mástil)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds61hbdesc"><p>El Jazz Bass ® Hum Custom V Bridge ofrece un tono con mejores medios-graves que los tradicionales modelos simple bobina y plena cancelación de ruido. Su estructura de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo doble en formato de simple es ideal para aquellos bajistas que buscan un tono innovador, pero conservando varias de las cualidades de los clásicos Jazz Bass. Construido en el color y el espesor característicos de fibra vulcanizada, este micrófono es un reemplazo directo para cualquier American Standard Jazz Bass ®. Orgullosamente fabricado en Florida-BA, el producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,34K (puente)</li>
+        <li>PICO DE RESONANCIA: 2,9KHz (puente)</li>
+        <li>INDUCTANCIA: 3,28 Henries (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds61hdesc"><p>El Jazz Bass ® Hum Custom V Set ofrece un tono con mejores medios-bajos que los tradicionales modelos simple bobina y plena cancelación de ruido. Su diseño de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo es ideal para aquellos bajistas que buscan un tono innovador, el cual conserva muchas de las características de los clásicos Jazz Bass como la estructura de núcleos en ALNICO 5. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass®. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,27K (mástil) y 8,34K (puente) </li>
+        <li>PICO DE RESONANCIA: 3,5KHz (bobinas en paralelo)</li>
+        <li>INDUCTANCIA: 3,25 Henries (mástil) y 3,28 Henries (mástil)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds64iindesc"><p>Este Jazz Bass ® para 5 cuerdas captura el tono clásico de estos modelos, pero con mayor presencia de medios, calidez y dulzura en las notas. Sus núcleos de ALNICO 2 desbastados de forma manual y sus bobinas moderadas, brindan un sonido pleno y con twang manteniendo claridad. Construidos en el color y el espesor característicos de fibra vulcanizada, este modelo viene provisto de un cobertor plástico clásico y es un reemplazo directo para la mayoría de los bajos American Standard Jazz Bass ® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 7,7K (mástil)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds64iibdesc"><p>Este Jazz Bass ® para 5 cuerdas captura el tono clásico de estos modelos, pero con mayor presencia de medios, calidez y dulzura en las notas. Sus núcleos de ALNICO 2 desbastados de forma manual y sus bobinas moderadas, brindan un sonido pleno y con twang manteniendo claridad. Construidos en el color y el espesor característicos de fibra vulcanizada, este modelo viene provisto de un cobertor plástico clásico y es un reemplazo directo para la mayoría de los bajos American Standard Jazz Bass ® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,3K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds64iidesc"><p>Este set de Jazz Bass ® para 5 cuerdas captura el tono clásico de estos modelos, pero con mayor presencia de medios, calidez y dulzura en las notas. Sus núcleos de ALNICO 2 desbastados de forma manual y sus bobinas moderadas, brindan un sonido pleno y con twang manteniendo claridad. Construidos en el color y el espesor característicos de fibra vulcanizada, este modelo viene provisto de un cobertor plástico clásico y es un reemplazo directo para la mayoría de los bajos American Standard Jazz Bass ® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 7,7K (mástil) y 8,3K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds64ndesc"><p>Este modelo Jazz Bass ® para 5 cuerdas captura el tono clásico con la exacta cantidad de graves, medios y definición en las notas altas. Sus núcleos de ALNICO 5 desbastados de forma manual y bobinas moderadas, brindan un sonido pleno, cálido y con twang manteniendo claridad. Construidos en el color y el espesor característicos de fibra vulcanizada, este modelo viene provisto de un cobertor plástico clásico y es un reemplazo directo para la mayoría de los bajos American Standard Jazz Bass ® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 7,7K (mástil)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds64bdesc"><p>Este modelo Jazz Bass ® para 5 cuerdas captura el tono clásico con la exacta cantidad de graves, medios y definición en las notas altas. Sus núcleos de ALNICO 5 desbastados de forma manual y bobinas moderadas, brindan un sonido pleno, cálido y con twang manteniendo claridad. Construidos en el color y el espesor característicos de fibra vulcanizada, este modelo viene provisto de un cobertor plástico clásico y es un reemplazo directo para la mayoría de los bajos American Standard Jazz Bass ® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,3K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds64desc"><p>Este modelo Jazz Bass ® para 5 cuerdas captura el tono clásico con la exacta cantidad de graves, medios y definición en las notas altas. Sus núcleos de ALNICO 5 desbastados de forma manual y bobinas moderadas, brindan un sonido pleno, cálido y con twang manteniendo claridad. Construidos en el color y el espesor característicos de fibra vulcanizada, este set viene provisto de un cobertor plástico clásico y es un reemplazo directo para la mayoría de los bajos American Standard Jazz Bass ® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 7,7K (mástil) y 8,3K (puente)</li>
+        <li>PICO DE RESONANCIA: 3,62KHz (bobinas en paralelo)</li>
+        <li>INDUCTANCIA: 1,46 Henries (bobinas en paralelo)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds64iihndesc"><p>El Jazz Bass® Hum Custom II Neck para 5 cuerdas ofrece un tono con mejores medios-bajos que los tradicionales modelos simple bobina y plena cancelación de ruido. En comparación con la versión de ALNICO 5, este modelo ofrece mejor sustain y sus notas son más cálidas & porosas. Su diseño de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo es ideal para aquellos bajistas que buscan un tono innovador, el cual conserva muchas de las características de los clásicos Jazz Bass. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,6K (mástil)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds64iihbdesc"><p>El Jazz Bass® Hum Custom II Bridge para 5 cuerdas ofrece un tono con mejores medios-bajos que los tradicionales modelos simple bobina y plena cancelación de ruido. En comparación con la versión de ALNICO 5, este modelo ofrece mejor sustain y sus notas son más cálidas & porosas. Su diseño de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo es ideal para aquellos bajistas que buscan un tono innovador, el cual conserva muchas de las características de los clásicos Jazz Bass. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 9K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds64iihdesc"><p>El Jazz Bass® Hum Custom II Set para 5 cuerdas ofrece un tono con mejores medios-bajos que los tradicionales modelos simple bobina y plena cancelación de ruido. En comparación con la versión de ALNICO 5, este modelo ofrece mejor sustain y sus notas son más cálidas & porosas. Su diseño de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo es ideal para aquellos bajistas que buscan un tono innovador, el cual conserva muchas de las características de los clásicos Jazz Bass. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,6K (mástil) 9K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds64hndesc"><p>El Jazz Bass® Hum Custom V Neck para 5 cuerdas ofrece un tono con mejores medios-bajos que los tradicionales modelos simple bobina y plena cancelación de ruido. Su diseño de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo es ideal para aquellos bajistas que buscan un tono innovador, el cual conserva muchas de las características de los clásicos Jazz Bass como la estructura de núcleos en ALNICO 5. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,6K (mástil)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds64hbdesc"><p>EEl Jazz Bass® Hum Custom V Bridge para 5 cuerdas ofrece un tono con mejores medios-bajos que los tradicionales modelos simple bobina y plena cancelación de ruido. Su diseño de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo es ideal para aquellos bajistas que buscan un tono innovador, el cual conserva muchas de las características de los clásicos Jazz Bass como la estructura de núcleos en ALNICO 5. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 9K (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds64hdesc"><p>El Jazz Bass® Hum Custom V Set para 5 cuerdas ofrece un tono con mejores medios-bajos que los tradicionales modelos simple bobina y plena cancelación de ruido. Su diseño de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo es ideal para aquellos bajistas que buscan un tono innovador, el cual conserva muchas de las características de los clásicos Jazz Bass como la estructura de núcleos en ALNICO 5. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 8,6K (mástil) 9K (puente)</li>
+        <li>PICO DE RESONANCIA: 3,41KHz (bobinas en paralelo)</li>
+        <li>INDUCTANCIA: 2,76 Henries (mástil) y 2,82 Henries (puente)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+  </div>
+</form>
+<div class="bottom-spacer"></div>
+<div class="base-bg" id="base-bg">
+</div>
+<div class="colorSupInf" id="fotojazz">
+  <img src="http://www.dspickups.com.ar/builder/jazz-bass/jbSetBk.png" class="colorSupInf" id="jbSetBk">
+  <img src="http://www.dspickups.com.ar/builder/jazz-bass/jbSoloBk.png" class="colorSupInf" id="jbSoloBk">
+  <img src="http://www.dspickups.com.ar/builder/jazz-bass/jbSetCr.png" class="colorSupInf" id="jbSetCr">
+  <img src="http://www.dspickups.com.ar/builder/jazz-bass/jbSoloCr.png" class="colorSupInf" id="jbSoloCr">
+  <img src="http://www.dspickups.com.ar/builder/jazz-bass/jb5Set.png" class="colorSupInf" id="jb5Set">
+  <img src="http://www.dspickups.com.ar/builder/jazz-bass/jb5Solo.png" class="colorSupInf" id="jb5Solo">
+</div>
+<script type="text/javascript">
+// Muestra la primera imagen //
+$(function(){
+  $('#jbSetBk').show().siblings().hide()
+});
+// Cambia imagen por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Set x2" && $("#Color").val() == "Negro") {
+    $('#jbSetBk').show().siblings().hide();
+  } else if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Mástil" && $("#Color").val() == "Negro") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Puente" && $("#Color").val() == "Negro") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Set x2" && $("#Color").val() == "Crema") {
+    $('#jbSetCr').show().siblings().hide();
+  } else if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Mástil" && $("#Color").val() == "Crema") {
+    $('#jbSoloCr').show().siblings().hide();
+  } else if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Puente" && $("#Color").val() == "Crema") {
+    $('#jbSoloCr').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Set x2" && $("#Color").val() == "Negro") {
+    $('#jbSetBk').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Mástil" && $("#Color").val() == "Negro") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Puente" && $("#Color").val() == "Negro") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Set x2" && $("#Color").val() == "Crema") {
+    $('#jbSetCr').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Mástil" && $("#Color").val() == "Crema") {
+    $('#jbSoloCr').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Puente" && $("#Color").val() == "Crema") {
+    $('#jbSoloCr').show().siblings().hide();
+  } else if ($(this).val() == "JB-5" && $("#Posición").val() == "Set x2") {
+    $('#jb5Set').show().siblings().hide();
+  } else if ($(this).val() == "JB-5" && $("#Posición").val() == "Mástil") {
+    $('#jb5Solo').show().siblings().hide();
+  } else if ($(this).val() == "JB-5" && $("#Posición").val() == "Puente") {
+    $('#jb5Solo').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-5" && $("#Posición").val() == "Set x2") {
+    $('#jb5Set').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-5" && $("#Posición").val() == "Mástil") {
+    $('#jb5Solo').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-5" && $("#Posición").val() == "Puente") {
+    $('#jb5Solo').show().siblings().hide();
+  }
+});
+$("#Modelo").trigger("change");
+// Cambia imagen por posición //
+$("#Posición").change(function() {
+  if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Custom" && $("#Color").val() == "Negro") {
+    $('#jbSetBk').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-Custom" && $("#Color").val() == "Negro") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-Custom" && $("#Color").val() == "Negro") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Custom" && $("#Color").val() == "Crema") {
+    $('#jbSetCr').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-Custom" && $("#Color").val() == "Crema") {
+    $('#jbSoloCr').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-Custom" && $("#Color").val() == "Crema") {
+    $('#jbSoloCr').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Color").val() == "Negro") {
+    $('#jbSetBk').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Color").val() == "Negro") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Color").val() == "Negro") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Color").val() == "Crema") {
+    $('#jbSetCr').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Color").val() == "Crema") {
+    $('#jbSoloCr').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Color").val() == "Crema") {
+    $('#jbSoloCr').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-5") {
+    $('#jb5Set').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-5") {
+    $('#jb5Solo').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-5") {
+    $('#jb5Solo').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Hum-5") {
+    $('#jb5Set').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-Hum-5") {
+    $('#jb5Solo').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-Hum-5") {
+    $('#jb5Solo').show().siblings().hide();
+  }
+});
+$("#Posición").trigger("change");
+// Cambia descripción por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Set x2" && $("#Imán").val() == "Alnico 2") {
+    $('#ds60adesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Mástil" && $("#Imán").val() == "Alnico 2") {
+    $('#ds60andesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Puente" && $("#Imán").val() == "Alnico 2") {
+    $('#ds60abesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Set x2" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61adesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Mástil" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61andesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Custom" && $("#Posición").val() == "Puente" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61abdesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Set x2" && $("#Imán").val() == "Alnico 2") {
+    $('#ds61iihdesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Mástil" && $("#Imán").val() == "Alnico 2") {
+    $('#ds61iihndesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Puente" && $("#Imán").val() == "Alnico 2") {
+    $('#ds61iihbdesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Set x2" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61hdesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Mástil" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61hndesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-Custom" && $("#Posición").val() == "Puente" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61hbdesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-5" && $("#Posición").val() == "Set x2" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iidesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-5" && $("#Posición").val() == "Mástil" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iindesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-5" && $("#Posición").val() == "Puente" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iibdesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-5" && $("#Posición").val() == "Set x2" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64desc').show().siblings().hide();
+  } else if ($(this).val() == "JB-5" && $("#Posición").val() == "Mástil" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64ndesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-5" && $("#Posición").val() == "Puente" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64bdesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-5" && $("#Posición").val() == "Set x2" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iihdesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-5" && $("#Posición").val() == "Mástil" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iihndesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-5" && $("#Posición").val() == "Puente" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iihbdesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-5" && $("#Posición").val() == "Set x2" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64hdesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-5" && $("#Posición").val() == "Mástil" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64hndesc').show().siblings().hide();
+  } else if ($(this).val() == "JB-Hum-5" && $("#Posición").val() == "Puente" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64hbdesc').show().siblings().hide();
+  }
+});
+$("#Modelo").trigger("change");
+// Cambia descripción por posición //
+$("#Posición").change(function() {
+  if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Custom" && $("#Imán").val() == "Alnico 2") {
+    $('#ds60adesc').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-Custom" && $("#Imán").val() == "Alnico 2") {
+    $('#ds60andesc').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-Custom" && $("#Imán").val() == "Alnico 2") {
+    $('#ds60abdesc').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Custom" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61adesc').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-Custom" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61andesc').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-Custom" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61abdesc').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Imán").val() == "Alnico 2") {
+    $('#ds61iihdesc').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Imán").val() == "Alnico 2") {
+    $('#ds61iihndesc').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Imán").val() == "Alnico 2") {
+    $('#ds61iihbdesc').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61hdesc').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61hndesc').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-Hum-Custom" && $("#Imán").val() == "Alnico 5") {
+    $('#ds61hbdesc').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-5" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iidesc').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-5" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iindesc').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-5" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iibdesc').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-5" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64desc').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-5" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64ndesc').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-5" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64bdesc').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Hum-5" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iihdesc').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-Hum-5" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iihndesc').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-Hum-5" && $("#Imán").val() == "Alnico 2") {
+    $('#ds64iihbdesc').show().siblings().hide();
+  } else if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Hum-5" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64hdesc').show().siblings().hide();
+  } else if ($(this).val() == "Mástil" && $("#Modelo").val() == "JB-Hum-5" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64hndesc').show().siblings().hide();
+  } else if ($(this).val() == "Puente" && $("#Modelo").val() == "JB-Hum-5" && $("#Imán").val() == "Alnico 5") {
+    $('#ds64hbdesc').show().siblings().hide();
+  }
+});
+$("#Posición").trigger("change");
+// Cambia descripción por imán //
+$("#Imán").change(function() {
+  if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-Custom") {
+    $('#ds60adesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-Custom") {
+    $('#ds60andesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-Custom") {
+    $('#ds60abdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-Custom") {
+    $('#ds61adesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-Custom") {
+    $('#ds61andesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-Custom") {
+    $('#ds61abdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#ds61iihdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#ds61iihndesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#ds61iihbdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#ds61hdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#ds61hndesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#ds61hbdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-5") {
+    $('#ds64iidesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-5") {
+    $('#ds64iindesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-5") {
+    $('#ds64iibdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-5") {
+    $('#ds64desc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-5") {
+    $('#ds64ndesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-5") {
+    $('#ds64bdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-Hum-5") {
+    $('#ds64iihdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-Hum-5") {
+    $('#ds64iihndesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-Hum-5") {
+    $('#ds64iihbdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-Hum-5") {
+    $('#ds64hdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-Hum-5") {
+    $('#ds64hndesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-Hum-5") {
+    $('#ds64hbdesc').show().siblings().hide();
+  }
+});
+$("#Imán").trigger("change");
+</script>
