@@ -1,0 +1,227 @@
+<style>
+body {
+  background-color: #f5f5f5;
+}
+form {
+  display: block;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #725742;
+}
+.form-control {
+  width: 450px;
+  min-height: 40px;
+  border: 1px solid #b89c88;
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+}
+#comments.form-control {
+  height: 200px;
+  overflow: scroll;
+}
+.base-bg {
+  position: fixed;
+  z-index: 998;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 448px;
+  height: 320px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #b89c88;
+}
+.colorSupInf {
+  position: fixed;
+  z-index: 1000;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.boton-cotizar {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  width: 300px;
+  height: 40px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: #725742;
+}
+.boton-cotizar:hover {
+  background-color: #97775f;
+}
+.bottom-spacer {
+  height: 360px;
+}
+.descripcion {
+  width: 700px;
+  text-align: justify;
+}
+</style>
+<form class="form">
+  <div class="form-group">
+    <label for="Modelo">Modelo</label>
+    <select class="form-control" id="Modelo" name="Modelo">
+      <option value="Musicman 4">Musicman ® 4</option>
+      <option value="Musicman 5">Musicman ® 5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Posición">Posición</label>
+    <select class="form-control" id="Posición" name="Posición">
+      <option value="Set x2">Set x2</option>
+      <option value="Mástil">Mástil</option>
+      <option value="Puente">Puente</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Imán">Tipo de imantación</label>
+    <select class="form-control" id="Imán" name="Imán">
+      <option value="Cerámico">Cerámico</option>
+      <option value="Alnico 5">Alnico 5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Nombre">Nombre</label>
+    <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+  </div>
+  <div class="form-group">
+    <label for="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">E-mail</label>
+    <input type="email" class="form-control" id="E-Mail" name="E-Mail" required>
+  </div>
+  <div class="form-group">
+    <label for="Comments">¿Comentarios o preguntas?</label>
+    <textarea class="form-control" id="Comments" rows="5" name="Comentarios"></textarea>
+  </div>
+  <button type="submit" class="boton-cotizar">COTIZAR</button>
+  <div class="descripcion">
+    <div id="ds65adesc"><p>Micrófono de reemplazo en ALNICO 5 para bajos StingRay de 4 cuerdas que captura el carácter y la calidez de los años 70’s. Con un diseño de bobinas clásicas, ofrece una respuesta extendida tanto en agudos como en graves con gran ataque. Este doble bobina presenta un tono firme con esos sólidos graves que hizo famosos a los bajos Music Man ®. Este producto es un reemplazo directo para bajos de 4 cuerdas Music Man ® StingRay y bajos OLP (sugerimos consultar previamente las dimensiones del micrófono para corroborarlo) Orgullosamente fabricado en Florida-BA, este micrófono es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 1,9K (bobinas en paralelo)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds65cdesc"><p>Micrófono de reemplazo moderno de tipo cerámico para bajos StingRay de 4 cuerdas. Este modelo ofrece un tono balanceado con graves articulados, muchos medios, mordaces agudos y gran ataque. Equipado con dos largas barras cerámicas y bobinado de forma precisa, este doble bobina presenta un tono firme con esos sólidos graves que hace famosos a los bajos Music Man ®. Este producto es un reemplazo directo para bajos de 4 cuerdas Music Man ® StingRay y bajos OLP (sugerimos consultar previamente las dimensiones del micrófono para corroborarlo) Orgullosamente fabricado en Florida-BA, este micrófono es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 1,8K (bobinas en paralelo)</li>
+        <li>IMANTACIÓN: 2 barras CERÁMICAS</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds66adesc"><p>Micrófono de reemplazo en ALNICO 5 para bajos StingRay de 5 cuerdas que captura el carácter y la calidez de los años 70’s. Con un diseño de bobinas clásicas, ofrece una respuesta extendida tanto en agudos como en graves con gran ataque. Este doble bobina presenta un tono firme con esos sólidos graves que hizo famosos a los bajos Music Man ®. Este producto es un reemplazo directo para bajos de 5 cuerdas Music Man ® StingRay y bajos OLP (sugerimos consultar previamente las dimensiones del micrófono para corroborarlo) Orgullosamente fabricado en Florida-BA, este micrófono es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 2,45K (bobinas en paralelo)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds66cdesc"><p>Micrófono de reemplazo moderno de tipo cerámico para bajos StingRay de 5 cuerdas. Este modelo ofrece un tono balanceado con graves articulados, muchos medios, mordaces agudos y gran ataque. Equipado con dos largas barras cerámicas y bobinado de forma precisa, este doble bobina presenta un tono firme con esos sólidos graves que hace famosos a los bajos Music Man ®. Este producto es un reemplazo directo para bajos de 5 cuerdas Music Man ® StingRay y bajos OLP (sugerimos consultar previamente las dimensiones del micrófono para corroborarlo) Orgullosamente fabricado en Florida-BA, este micrófono es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 2,2K (bobinas en paralelo)</li>
+        <li>IMANTACIÓN: 2 barras CERÁMICAS</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: 4 conductores + malla</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+  </div>
+</form>
+<div class="bottom-spacer"></div>
+<div class="base-bg" id="base-bg">
+</div>
+<div class="colorSupInf" id="fotomusicman">
+  <img src="http://www.dspickups.com.ar/builder/musicman/musicman4a.png" class="colorSupInf" id="musicman4a">
+  <img src="http://www.dspickups.com.ar/builder/musicman/musicman4c.png" class="colorSupInf" id="musicman4c">
+  <img src="http://www.dspickups.com.ar/builder/musicman/musicman5a.png" class="colorSupInf" id="musicman5a">
+  <img src="http://www.dspickups.com.ar/builder/musicman/musicman5c.png" class="colorSupInf" id="musicman5c">
+</div>
+<script type="text/javascript">
+// Muestra la primera imagen//
+$(function(){
+  $('#musicman4a').show().siblings().hide();
+});
+// Cambia foto por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "Musicman 4" && $("#Imán").val() == "Alnico 5") {
+    $('#musicman4a').show().siblings().hide();
+  } else if ($(this).val() == "Musicman 4" && $("#Imán").val() == "Cerámico") {
+    $('#musicman4c').show().siblings().hide();
+  } else if ($(this).val() == "Musicman 5" && $("#Imán").val() == "Alnico 5") {
+    $('#musicman5a').show().siblings().hide();
+  } else if ($(this).val() == "Musicman 5" && $("#Imán").val() == "Cerámico") {
+    $('#musicman5c').show().siblings().hide();
+  }
+});
+$("#Modelo").trigger("change");
+// Cambia foto por imán //
+$("#Imán").change(function() {
+  if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "Musicman 4") {
+    $('#musicman4a').show().siblings().hide();
+  } else if ($(this).val() == "Cerámico" && $("#Modelo").val() == "Musicman 4") {
+    $('#musicman4c').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "Musicman 5") {
+    $('#musicman5a').show().siblings().hide();
+  } else if ($(this).val() == "Cerámico" && $("#Modelo").val() == "Musicman 5") {
+    $('#musicman5c').show().siblings().hide();
+  }
+});
+$("#Imán").trigger("change");
+// Cambia descripción por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "Musicman 4" && $("#Imán").val() == "Alnico 5") {
+    $('#ds65adesc').show().siblings().hide();
+  } else if ($(this).val() == "Musicman 4" && $("#Imán").val() == "Cerámico") {
+    $('#ds65cdesc').show().siblings().hide();
+  } else if ($(this).val() == "Musicman 5" && $("#Imán").val() == "Alnico 5") {
+    $('#ds66adesc').show().siblings().hide();
+  } else if ($(this).val() == "Musicman 5" && $("#Imán").val() == "Cerámico") {
+    $('#ds66cdesc').show().siblings().hide();
+  }
+});
+$("#Modelo").trigger("change");
+// Cambia descripción por imán //
+$("#Imán").change(function() {
+  if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "Musicman 4") {
+    $('#ds65adesc').show().siblings().hide();
+  } else if ($(this).val() == "Cerámico" && $("#Modelo").val() == "Musicman 4") {
+    $('#ds65cdesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "Musicman 5") {
+    $('#ds66adesc').show().siblings().hide();
+  } else if ($(this).val() == "Cerámico" && $("#Modelo").val() == "Musicman 5") {
+    $('#ds66cdesc').show().siblings().hide();
+  }
+});
+$("#Imán").trigger("change");
+</script>
