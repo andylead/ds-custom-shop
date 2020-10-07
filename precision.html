@@ -1,0 +1,197 @@
+<style>
+body {
+  background-color: #f5f5f5;
+}
+form {
+  display: block;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #725742;
+}
+.form-control {
+  width: 450px;
+  min-height: 40px;
+  border: 1px solid #b89c88;
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+}
+#comments.form-control {
+  height: 200px;
+  overflow: scroll;
+}
+.base-bg {
+  position: fixed;
+  z-index: 998;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 448px;
+  height: 320px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #b89c88;
+}
+.colorSupInf {
+  position: fixed;
+  z-index: 1000;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.boton-cotizar {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  width: 300px;
+  height: 40px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: #725742;
+}
+.boton-cotizar:hover {
+  background-color: #97775f;
+}
+.bottom-spacer {
+  height: 360px;
+}
+.descripcion {
+  width: 700px;
+  text-align: justify;
+}
+</style>
+<form class="form">
+  <div class="form-group">
+    <label for="Modelo">Modelo</label>
+    <select class="form-control" id="Modelo" name="Modelo">
+      <option value="Precision Custom V">Precision ® Custom V</option>
+      <option value="P-J Custom V">P-J ® Custom V</option>
+    </select>
+  </div>
+  <div class="form-group" id="colorDivP">
+    <label for="Color">Color</label>
+    <select class="form-control" id="Color" name="Color">
+      <option value="Negro">Negro</option>
+      <option value="Crema">Crema</option>
+      <option value="Blanco">Blanco</option>
+    </select>
+  </div>
+  <div class="form-group" id="colorDivPJ">
+    <label for="Color">Color</label>
+    <select class="form-control" id="Color" name="Color">
+      <option value="Negro">Negro</option>
+      <option value="Crema">Crema</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Nombre">Nombre</label>
+    <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+  </div>
+  <div class="form-group">
+    <label for="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">E-mail</label>
+    <input type="email" class="form-control" id="E-Mail" name="E-Mail" required>
+  </div>
+  <div class="form-group">
+    <label for="Comments">¿Comentarios o preguntas?</label>
+    <textarea class="form-control" id="Comments" rows="5" name="Comentarios"></textarea>
+  </div>
+  <button type="submit" class="boton-cotizar">COTIZAR</button>
+  <div class="descripcion">
+    <div id="ds62adesc"><p>Precision ® diseñado para sonar como los modelos de los años 50’s. De tono profundo y cálido, el modelo es fabricado para aquellos músicos que buscan frecuencias medias definidas y ese tono característico "warm 'n woody" (cálido y maderoso) Sus núcleos de ALNICO 5 desbastados de forma manual junto a bobinas de vueltas moderadas, hacen aparecer gran calidez y “cuerpo” al instrumento. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Precision ® bass. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 10,9K</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>PICO DE RESONANCIA: 2,68KHz</li>
+        <li>INDUCTANCIA: 5,3 Henries</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds63adesc"><p>El P-J Custom V Set ofrece una gran versatilidad de sonidos al bajista: el Precision ® tiene ese tono profundo y cálido que marcó los años 50’s, mientras que el Jazz Bass® Bridge doble en formato de simple impone calidez, “cuerpo”, definición y claridad al instrumento. El diseño del Jazz Bass ® Bridge hum-canceling utiliza dos bobinas lineales, una al lado de la otra, que se ubican debajo del cobertor plástico. La forma en que las bobinas están conectadas entre sí (serie), brinda a este micrófono una cantidad de graves que usualmente no se encuentra en los tradicionales modelos simple bobina para Jazz Bass ®. Cada uno de los modelos es silencioso en sí mismo y cuando ambos son conectados de forma conjunta. Este set es un reemplazo directo para cualquier American Standard Jazz Bass ®. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada</li>
+        <li>RESISTENCIA: 10,9K (Precision ® Custom) y 15K (Jazz Bass ® Hum Custom Bridge)</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
+        <li>PICO DE RESONANCIA: 2,68KHz (Precision ® Custom) y 2,58KHz (Jazz Bass ® Hum Custom Bridge)</li>
+        <li>INDUCTANCIA: 3,05 Henries (bobinas en paralelo)</li>
+        <li>CANCELACIÓN DE RUIDO: Si</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene ® (Precision) y 4-conductores + malla (Jazz Bass)</li>
+        <li>BASE: Fibra vulcanizada</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos y burletes de goma para el montaje, manual de instalación.</li>
+      </ul> 
+    </div>
+  </div>
+</form>
+<div class="bottom-spacer"></div>
+<div class="base-bg" id="base-bg">
+</div>
+<div class="colorSupInf" id="fotojazz">
+  <img src="http://www.dspickups.com.ar/builder/precision/precisionBk.png" class="colorSupInf" id="precisionBk">
+  <img src="http://www.dspickups.com.ar/builder/precision/precisionCr.png" class="colorSupInf" id="precisionCr">
+  <img src="http://www.dspickups.com.ar/builder/precision/precisionWh.png" class="colorSupInf" id="precisionWh">
+  <img src="http://www.dspickups.com.ar/builder/precision/pjBk.png" class="colorSupInf" id="pjBk">
+  <img src="http://www.dspickups.com.ar/builder/precision/pjCr.png" class="colorSupInf" id="pjCr">
+</div>
+<script type="text/javascript">
+// Muestra la primera imagen y oculta campo color P-J//
+$(function(){
+  $('#precisionBk').show().siblings().hide();
+  $('#colorDivP').show();
+  $('#colorDivPJ').hide();
+});
+// Cambia imagen por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "Precision Custom V" && $("#Color").val() == "Negro") {
+    $('#precisionBk').show().siblings().hide();
+  } else if ($(this).val() == "Precision Custom V" && $("#Color").val() == "Crema") {
+    $('#precisionCr').show().siblings().hide();
+  } else if ($(this).val() == "Precision Custom V" && $("#Color").val() == "Blanco") {
+    $('#precisionWh').show().siblings().hide();
+  } else if ($(this).val() == "P-J Custom V" && $("#Color").val() == "Negro") {
+    $('#pjBk').show().siblings().hide();
+  } else if ($(this).val() == "P-J Custom V" && $("#Color").val() == "Blanco") {
+    $('#pjWh').show().siblings().hide();
+  }
+});
+$("#Modelo").trigger("change");
+// Cambia descripción por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "Precision Custom V") {
+    $('#ds62adesc').show().siblings().hide();
+  } else if ($(this).val() == "P-J Custom V") {
+    $('#ds63adesc').show().siblings().hide();
+  }
+});
+$("#Modelo").trigger("change");
+// Esconde campo color por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "Precision Custom V") {
+    $('#colorDivP').show();
+    $('#colorDivPJ').hide();
+  } else if ($(this).val() == "P-J Custom V") {
+    $('#colorDivP').hide();
+    $('#colorDivPJ').show();
+  }
+});
+$("#Modelo").trigger("change");
+</script>
