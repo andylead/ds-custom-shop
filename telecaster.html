@@ -121,7 +121,7 @@ form {
       <option value="DS53">(DS53) Tele Bridge Stack</option>
     </select>
   </div>
-  <div class="form-group" id="Imán">
+  <div class="form-group">
     <label for="Imán">Tipo de imantación</label>
     <select class="form-control" id="Imán" name="Imán">
       <option value="Alnico 2">Alnico 2</option>
@@ -282,6 +282,7 @@ form {
 // Muestra las primeras previews //
 $(function(){
   $('#teleCromado').show().siblings().hide()
+  $('#colorSupDiv').hide()
 });
 // Cambia imagen por modelo//
 $("#Modelo").change(function() {
@@ -430,10 +431,10 @@ $("#Imán").change(function() {
 $("#Imán").trigger("change");
 // Oculta campo color por modelo //
 $("#Modelo").change(function() {
-  if ($(this).val() == "DS22/23" || $(this).val() == "DS53") {
+  if ($(this).val() == "DS22/DS23" || $(this).val() == "DS53") {
     $('#colorSupDiv').show();
     $('#coverSupDiv').hide();
-  } else if ($(this).val() == "DS20/21" || $(this).val() == "DS52") {
+  } else if ($(this).val() == "DS20/DS21" || $(this).val() == "DS52") {
     $('#colorSupDiv').hide();
     $('#coverSupDiv').show();
   }
