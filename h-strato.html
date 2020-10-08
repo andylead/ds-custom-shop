@@ -87,6 +87,45 @@ form {
   width: 700px;
   text-align: justify;
 }
+/* Celulares vertical */
+@media screen and (max-width: 600px) {
+  form {
+    max-width: 100%;
+  }
+  .form-control {
+    width: 90%;
+  }
+  .base-bg {
+    margin-right: -150px;
+    width: 298px;
+    height: 220px;
+  }
+  .base1 {
+    margin-right: -150px;
+    width: 300px;
+    height: 200px;
+  }
+  .colorSupInf {
+    margin-right: -150px;
+    width: 300px;
+    height: 200px;
+  }
+  .cover {
+    margin-right: -150px;
+    width: 300px;
+    height: 200px;
+  }
+  .tornilloSupInf {
+    margin-right: -150px;
+    width: 300px;
+    height: 200px;
+  }
+  .descripcion {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 </style>
 <form class="form">
   <div class="form-group">
@@ -114,7 +153,7 @@ form {
       <option value="Verdoso">Amarillo Verdoso</option>
       <option value="Amarillo">Amarillo</option>
       <option value="Verde">Verde</option>
-      <option value="Rosa">Rosa</option>
+      <option value="Rojo">Rojo</option>
       <option value="Turquesa">Turquesa</option>
       <option value="Azul">Azul</option>
     </select>
@@ -129,7 +168,7 @@ form {
       <option value="Verdoso">Amarillo Verdoso</option>
       <option value="Amarillo">Amarillo</option>
       <option value="Verde">Verde</option>
-      <option value="Rosa">Rosa</option>
+      <option value="Rojo">Rojo</option>
       <option value="Turquesa">Turquesa</option>
       <option value="Azul">Azul</option>
     </select>
@@ -188,7 +227,7 @@ form {
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupVerdoso.png" class="colorSupInf" id="colorSupVerdoso">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupAmarillo.png" class="colorSupInf" id="colorSupAmarillo">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupVerde.png" class="colorSupInf" id="colorSupVerde">
-  <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupRosa.png" class="colorSupInf" id="colorSupRosa">
+  <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupRojo.png" class="colorSupInf" id="colorSupRojo">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupTurquesa.png" class="colorSupInf" id="colorSupTurquesa">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupAzul.png" class="colorSupInf" id="colorSupAzul">
 </div>
@@ -200,7 +239,7 @@ form {
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfVerdoso.png" class="colorSupInf" id="colorInfVerdoso">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfAmarillo.png" class="colorSupInf" id="colorInfAmarillo">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfVerde.png" class="colorSupInf" id="colorInfVerde">
-  <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfRosa.png" class="colorSupInf" id="colorInfRosa">
+  <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfRojo.png" class="colorSupInf" id="colorInfRojo">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfTurquesa.png" class="colorSupInf" id="colorInfTurquesa">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfAzul.png" class="colorSupInf" id="colorInfAzul">
 </div>
@@ -226,8 +265,8 @@ $("#ColorSup").change(function() {
     $('#colorSupAmarillo').show().siblings().hide();
   } else if ($(this).val() == "Verde") {
     $('#colorSupVerde').show().siblings().hide();
-  } else if ($(this).val() == "Rosa") {
-    $('#colorSupRosa').show().siblings().hide();
+  } else if ($(this).val() == "Rojo") {
+    $('#colorSupRojo').show().siblings().hide();
   } else if ($(this).val() == "Turquesa") {
     $('#colorSupTurquesa').show().siblings().hide();
   } else if ($(this).val() == "Azul") {
@@ -235,31 +274,6 @@ $("#ColorSup").change(function() {
   }
 });
 $("#ColorSup").trigger("change");
-// Cambia color de bobina superior//
-$("#ColorInf").change(function() {
-  if ($(this).val() == "Blanco") {
-    $('#colorInfBlanco').show().siblings().hide();
-  } else if ($(this).val() == "Negro") {
-    $('#colorInfNegro').show().siblings().hide();
-  } else if ($(this).val() == "Marfil") {
-    $('#colorInfMarfil').show().siblings().hide();
-  } else if ($(this).val() == "Crema") {
-    $('#colorInfCrema').show().siblings().hide();
-  } else if ($(this).val() == "Verdoso") {
-    $('#colorInfVerdoso').show().siblings().hide();
-  } else if ($(this).val() == "Amarillo") {
-    $('#colorInfAmarillo').show().siblings().hide();
-  } else if ($(this).val() == "Verde") {
-    $('#colorInfVerde').show().siblings().hide();
-  } else if ($(this).val() == "Rosa") {
-    $('#colorInfRosa').show().siblings().hide();
-  } else if ($(this).val() == "Turquesa") {
-    $('#colorInfTurquesa').show().siblings().hide();
-  } else if ($(this).val() == "Azul") {
-    $('#colorInfAzul').show().siblings().hide();
-  }
-});
-$("#ColorInf").trigger("change");
 // Cambia descripción por modelo //
 $("#Modelo").change(function() {
   if ($(this).val() == "DS40") {
