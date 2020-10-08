@@ -1,0 +1,436 @@
+<style>
+body {
+  background-color: #f5f5f5;
+}
+form {
+  display: block;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #725742;
+}
+.form-control {
+  width: 450px;
+  min-height: 40px;
+  border: 1px solid #b89c88;
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-appearance: none;
+}
+#comments.form-control {
+  height: 200px;
+  overflow: scroll;
+}
+.base-bg {
+  position: fixed;
+  z-index: 998;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 448px;
+  height: 320px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #b89c88;
+}
+.base1 {
+  position: fixed;
+  z-index: 999;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.colorSupInf {
+  position: fixed;
+  z-index: 1000;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
+.boton-cotizar {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  width: 300px;
+  height: 40px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: #725742;
+}
+.boton-cotizar:hover {
+  background-color: #97775f;
+}
+.bottom-spacer {
+  height: 360px;
+}
+.descripcion {
+  width: 700px;
+  text-align: justify;
+}
+@media only screen and (max-width: 600px) {
+  .form-control {
+    max-width: 90%;
+  }
+  .base1 {
+  margin-right: -180px;
+  width: 360px;
+  height: 240px;
+  }
+  .colorSupInf {
+  margin-right: -180px;
+  width: 360px;
+  height: 240px;
+  }
+  .descripcion {
+    max-width: 90%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .form-control {
+    max-width: 90%;
+  }
+}
+</style>
+<form class="form">
+  <div class="form-group">
+    <label for="Modelo">Modelo</label>
+    <select class="form-control" id="Modelo" name="Modelo">
+      <option value="DS20/DS21">(DS20/DS21) Tele Neck</option>
+      <option value="DS52">(DS52) Tele Neck Stack</option>
+      <option value="DS22/DS23">(DS22/DS23) Tele Bridge</option>
+      <option value="DS53">(DS53) Tele Bridge Stack</option>
+    </select>
+  </div>
+  <div class="form-group" id="Imán">
+    <label for="Imán">Tipo de imantación</label>
+    <select class="form-control" id="Imán" name="Imán">
+      <option value="Alnico 2">Alnico 2</option>
+      <option value="Alnico 5">Alnico 5</option>
+    </select>
+  </div>
+  <div class="form-group" id="coverSupDiv">
+    <label for="CoverSup">Color</label>
+    <select class="form-control" id="CoverSup" name="Cobertor">
+      <option value="Cromado">Cromado</option>
+      <option value="Dorado">Dorado</option>
+      <option value="Flameado">Flameado</option>
+    </select>
+  </div>
+  <div class="form-group" id="colorSupDiv">
+    <label for="ColorSup">Color</label>
+    <select class="form-control" id="ColorSup" name="Color">
+      <option value="Negro">Negro</option>
+      <option value="Blanco">Blanco</option>
+      <option value="Verdoso">Amarillo verdoso</option>
+      <option value="Amarillo">Amarillo</option>
+      <option value="Verde">Verde</option>
+      <option value="Rosa">Rosa</option>
+      <option value="Turquesa">Turquesa</option>
+      <option value="Azul">Azul</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Nombre">Nombre</label>
+    <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+  </div>
+  <div class="form-group">
+    <label for="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">E-mail</label>
+    <input type="email" class="form-control" id="E-Mail" name="E-Mail" required>
+  </div>
+  <div class="form-group">
+    <label for="Comments">¿Comentarios o preguntas?</label>
+    <textarea class="form-control" id="Comments" rows="5" name="Comentarios"></textarea>
+  </div>
+  <button type="submit" class="boton-cotizar">COTIZAR</button>
+  <div class="descripcion">
+    <div id="ds20desc"><p>El SC1 ofrece un sonido cristalino y definido sin el característico twang de los clásicos simple bobina para teleocaster®. Su focalizado y filoso campo magnético provisto por sus 2 barras cerámicas, imparten mayor ataque y agresividad. Este micrófono puede ser combinado con cualquier otro modelo simple bobina (ALNICO  o cerámico) y se adecúa perfectamente con humbuckers estándar en términos de balance y salida. La versión del medio (middle) ofrece polaridad y sentido de bobinado invertido para obtener cancelación de ruido en las posiciones 2 y 4 de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 5,43K (mástil-medio) y 6,44K (puente)</li>
+        <li>IMANTACIÓN: 2 Barras CERÁMICAS</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene®</li>
+        <li>BASE: CEM1 con roscas de bronce en 6/32” para una garantía de funcionamiento de por vida.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds21desc"><p>Esta versión del SC1 ofrece un sonido cristalino y definido para teleocaster®, matizado por una mayor calidez y “twang” por el agregado de sus núcleos en ALNICO 2. Su focalizado campo magnético, imparte un importante ataque y agresividad. Este micrófono puede ser combinado con cualquier otro modelo simple bobina (ALNICO  o cerámico) y se adecúa perfectamente con humbuckers estándar en términos de balance y salida. La versión del medio (middle) ofrece polaridad y sentido de bobinado invertido para obtener cancelación de ruido en las posiciones 2 y 4 de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 5,43K (mástil-medio) y 6,44K (puente)</li>
+        <li>IMANTACIÓN: 2 Barras CERÁMICAS</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene®</li>
+        <li>BASE: CEM1 con roscas de bronce en 6/32” para una garantía de funcionamiento de por vida.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds22desc"><p>Esta versión del SC1 ofrece un sonido cristalino y definido para teleocaster®, con un tono pleno de “twang” por el agregado de núcleos en ALNICO 5. Su ampliado campo magnético, imparte mayor ataque y agresividad sobre las cuerdas aunque con menor sustain. Este micrófono puede ser combinado con cualquier otro modelo simple bobina (ALNICO  o cerámico) y se adecúa perfectamente con humbuckers estándar en términos de balance y salida. La versión del medio (middle) ofrece polaridad y sentido de bobinado invertido para obtener cancelación de ruido en las posiciones 2 y 4 de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 5,43K (mástil-medio) y 6,44K (puente)</li>
+        <li>IMANTACIÓN: 2 Barras CERÁMICAS</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene®</li>
+        <li>BASE: CEM1 con roscas de bronce en 6/32” para una garantía de funcionamiento de por vida.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds23desc"><p>El SC2 es un modelo cerámico de alta salida que tiene el suficiente poder para competir con humbuckers estándar. Recomendado para aquellos músicos que buscan un sonido simple bobina agresivo con aumentados medios-graves, su extra bobinado y focalizado campo magnético provisto por sus 2 imanes cerámicos, ofrecen acordes plenos y poderosos junto a notas melódicas que sobresalen con increíble ataque. La versión del medio (middle) ofrece polaridad y sentido de bobinado invertido para obtener cancelación de ruido en las posiciones 2 y 4 de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 5,43K (mástil-medio) y 6,44K (puente)</li>
+        <li>IMANTACIÓN: 2 Barras CERÁMICAS</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene®</li>
+        <li>BASE: CEM1 con roscas de bronce en 6/32” para una garantía de funcionamiento de por vida.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds52desc"><p>Esta versión del SC2 tiene el suficiente poder para competir con humbuckers estándar, pero con mayor calidez y “twang” moderado por el agregado de 6 núcleos de ALNICO 2. Recomendado para aquellos músicos que buscan un sonido simple bobina agresivo con aumentados medios-graves, su extra bobinado y focalizado campo magnético provisto por sus 2 imanes cerámicos, ofrecen acordes plenos y poderosos junto a notas melódicas que sobresalen con increíble ataque. La versión del medio (middle) ofrece polaridad y sentido de bobinado invertido para obtener cancelación de ruido en las posiciones 2 y 4 de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 5,43K (mástil-medio) y 6,44K (puente)</li>
+        <li>IMANTACIÓN: 2 Barras CERÁMICAS</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene®</li>
+        <li>BASE: CEM1 con roscas de bronce en 6/32” para una garantía de funcionamiento de por vida.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds52iidesc"><p>Esta versión del SC2 tiene el suficiente poder para competir con humbuckers estándar, pero con mayor definición e importante “twang” por el agregado de 6 núcleos de ALNICO 5. Recomendado para aquellos músicos que buscan un sonido simple bobina agresivo con aumentados medios-graves, su extra bobinado y focalizado campo magnético provisto por sus 2 imanes cerámicos, ofrecen acordes plenos y poderosos junto a notas melódicas que sobresalen con increíble ataque. La versión del medio (middle) ofrece polaridad y sentido de bobinado invertido para obtener cancelación de ruido en las posiciones 2 y 4 de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 5,43K (mástil-medio) y 6,44K (puente)</li>
+        <li>IMANTACIÓN: 2 Barras CERÁMICAS</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene®</li>
+        <li>BASE: CEM1 con roscas de bronce en 6/32” para una garantía de funcionamiento de por vida.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+    <div id="ds53desc"><p>El SC2 es un modelo cerámico de alta salida que tiene el suficiente poder para competir con humbuckers estándar. Recomendado para aquellos músicos que buscan un sonido simple bobina agresivo con aumentados medios-graves, su extra bobinado y focalizado campo magnético provisto por sus 2 imanes cerámicos, ofrecen acordes plenos y poderosos junto a notas melódicas que sobresalen con increíble ataque. La versión del medio (middle) ofrece polaridad y sentido de bobinado invertido para obtener cancelación de ruido en las posiciones 2 y 4 de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 5,43K (mástil-medio) y 6,44K (puente)</li>
+        <li>IMANTACIÓN: 2 Barras CERÁMICAS</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene®</li>
+        <li>BASE: CEM1 con roscas de bronce en 6/32” para una garantía de funcionamiento de por vida.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul>
+    </div>
+    <div id="ds53iidesc"><p>Micrófono simple bobina de núcleos simétricos en ALNICO 2 que brinda un tono dulce, cálido y con mejor sustain gracias a su menor flujo magnético y una más libre vibración de las cuerdas. Es un modelo ideal para aquellos músicos interesados en obtener distorsiones producidas desde la ganancia del amplificador más que desde el propio micrófono. Para los guitarristas que prefieren cuerdas de calibre más fino o aquellos con instrumentos de diapasones más planos, los imanes simétricos proveen un mejor balance de salida entre las cuerdas. La versión del medio (middle) ofrece polaridad y sentido de bobinado invertido para obtener cancelación de ruido en las posiciones 2 y 4 de la llave selectora. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
+      <ul><li>SALIDA: Moderada / Alta</li>
+        <li>RESISTENCIA: 5,43K (mástil-medio) y 6,44K (puente)</li>
+        <li>IMANTACIÓN: 2 Barras CERÁMICAS</li>
+        <li>CANCELACIÓN DE RUIDO: No</li>
+        <li>CABLE DE SALIDA: Conductores simples de Santoprene®</li>
+        <li>BASE: CEM1 con roscas de bronce en 6/32” para una garantía de funcionamiento de por vida.</li>
+        <li>COMPONENTES INCLUIDOS: Tornillos, resortes para el montaje y manual de instalación.</li>
+      </ul> 
+    </div>
+  </div>
+</form>
+<div class="bottom-spacer"></div>
+<div class="base-bg" id="base-bg">
+</div>
+<div class="colorSupInf" id="colorSup">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleCromado.png" class="colorSupInf" id="teleCromado">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleDorado.png" class="colorSupInf" id="teleDorado">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleFlameado.png" class="colorSupInf" id="teleFlameado">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleStackCromado.png" class="colorSupInf" id="teleStackCromado">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleStackDorado.png" class="colorSupInf" id="teleStackDorado">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleStackFlameado.png" class="colorSupInf" id="teleStackFlameado">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeBk.png" class="colorSupInf" id="teleBridgeBk">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeWh.png" class="colorSupInf" id="teleBridgeWh">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeMt.png" class="colorSupInf" id="teleBridgeMt">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeYl.png" class="colorSupInf" id="teleBridgeYl">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeGr.png" class="colorSupInf" id="teleBridgeGr">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeRs.png" class="colorSupInf" id="teleBridgeRs">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeTq.png" class="colorSupInf" id="teleBridgeTq">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeBl.png" class="colorSupInf" id="teleBridgeBl">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackBk.png" class="colorSupInf" id="teleBridgeStackBk">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackWh.png" class="colorSupInf" id="teleBridgeStackWh">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackMt.png" class="colorSupInf" id="teleBridgeStackMt">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackYl.png" class="colorSupInf" id="teleBridgeStackYl">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackGr.png" class="colorSupInf" id="teleBridgeStackGr">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackRs.png" class="colorSupInf" id="teleBridgeStackRs">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackTq.png" class="colorSupInf" id="teleBridgeStackTq">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackBl.png" class="colorSupInf" id="teleBridgeStackBl">
+</div>
+<script type="text/javascript">
+// Muestra las primeras previews //
+$(function(){
+  $('#teleCromado').show().siblings().hide()
+});
+// Cambia imagen por modelo//
+$("#Modelo").change(function() {
+  if ($(this).val() == "DS20/DS21" && $("#CoverSup").val() == "Cromado") {
+    $('#teleCromado').show().siblings().hide();
+  } else if ($(this).val() == "DS20/DS21" && $("#CoverSup").val() == "Dorado") {
+    $('#teleDorado').show().siblings().hide();
+  } else if ($(this).val() == "DS20/DS21" && $("#CoverSup").val() == "Flameado") {
+    $('#teleFlameado').show().siblings().hide();
+  } else if ($(this).val() == "DS52" && $("#CoverSup").val() == "Cromado") {
+    $('#teleStackCromado').show().siblings().hide();
+  } else if ($(this).val() == "DS52" && $("#CoverSup").val() == "Dorado") {
+    $('#teleStackDorado').show().siblings().hide();
+  } else if ($(this).val() == "DS52" && $("#CoverSup").val() == "Flameado") {
+    $('#teleStackFlameado').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Negro") {
+    $('#teleBridgeBk').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Blanco") {
+    $('#teleBridgeWh').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Verdoso") {
+    $('#teleBridgeMt').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Amarillo") {
+    $('#teleBridgeYl').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Verde") {
+    $('#teleBridgeGr').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Rosa") {
+    $('#teleBridgeRs').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Turquesa") {
+    $('#teleBridgeTq').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Azul") {
+    $('#teleBridgeBl').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Negro") {
+    $('#teleBridgeStackBk').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Blanco") {
+    $('#teleBridgeStackWh').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Verdoso") {
+    $('#teleBridgeStackMt').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Amarillo") {
+    $('#teleBridgeStackYl').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Verde") {
+    $('#teleBridgeStackGr').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Rosa") {
+    $('#teleBridgeStackRs').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Turquesa") {
+    $('#teleBridgeStackTq').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Azul") {
+    $('#teleBridgeStackBl').show().siblings().hide();
+  }
+});
+$("#Modelo").trigger("change");
+// Cambia imagen por cobertor//
+$("#CoverSup").change(function() {
+  if ($(this).val() == "Cromado" && $("#Modelo").val() == "DS20/DS21") {
+    $('#teleCromado').show().siblings().hide();
+  } else if ($(this).val() == "Cromado" && $("#Modelo").val() == "DS52") {
+    $('#teleStackCromado').show().siblings().hide();
+  } else if ($(this).val() == "Dorado" && $("#Modelo").val() == "DS20/DS21") {
+    $('#teleDorado').show().siblings().hide();
+  } else if ($(this).val() == "Dorado" && $("#Modelo").val() == "DS52") {
+    $('#teleStackDorado').show().siblings().hide();
+  } else if ($(this).val() == "Flameado" && $("#Modelo").val() == "DS20/DS21") {
+    $('#teleFlameado').show().siblings().hide();
+  } else if ($(this).val() == "Flameado" && $("#Modelo").val() == "DS52") {
+    $('#teleStackFlameado').show().siblings().hide();
+  }
+});
+$("#CoverSup").trigger("change");
+// Cambia imagen por color//
+$("#ColorSup").change(function() {
+  if ($(this).val() == "Negro" && $("#Modelo").val() == "DS22/DS23") {
+    $('#teleBridgeBk').show().siblings().hide();
+  } else if ($(this).val() == "Negro" && $("#Modelo").val() == "DS53") {
+    $('#teleBridgeStackBk').show().siblings().hide();
+  } else if ($(this).val() == "Blanco" && $("#Modelo").val() == "DS22/DS23") {
+    $('#teleBridgeWh').show().siblings().hide();
+  } else if ($(this).val() == "Blanco" && $("#Modelo").val() == "DS53") {
+    $('#teleBridgeStackWh').show().siblings().hide();
+  } else if ($(this).val() == "Verdoso" && $("#Modelo").val() == "DS22/DS23") {
+    $('#teleBridgeMt').show().siblings().hide();
+  } else if ($(this).val() == "Verdoso" && $("#Modelo").val() == "DS53") {
+    $('#teleBridgeStackMt').show().siblings().hide();
+  } else if ($(this).val() == "Amarillo" && $("#Modelo").val() == "DS22/DS23") {
+    $('#teleBridgeYl').show().siblings().hide();
+  } else if ($(this).val() == "Amarillo" && $("#Modelo").val() == "DS53") {
+    $('#teleBridgeStackYl').show().siblings().hide();
+  } else if ($(this).val() == "Verde" && $("#Modelo").val() == "DS22/DS23") {
+    $('#teleBridgeGr').show().siblings().hide();
+  } else if ($(this).val() == "Verde" && $("#Modelo").val() == "DS53") {
+    $('#teleBridgeStackGr').show().siblings().hide();
+  } else if ($(this).val() == "Rosa" && $("#Modelo").val() == "DS22/DS23") {
+    $('#teleBridgeRs').show().siblings().hide();
+  } else if ($(this).val() == "Rosa" && $("#Modelo").val() == "DS53") {
+    $('#teleBridgeStackRs').show().siblings().hide();
+  } else if ($(this).val() == "Turquesa" && $("#Modelo").val() == "DS22/DS23") {
+    $('#teleBridgeTq').show().siblings().hide();
+  } else if ($(this).val() == "Turquesa" && $("#Modelo").val() == "DS53") {
+    $('#teleBridgeStackTq').show().siblings().hide();
+  } else if ($(this).val() == "Azul" && $("#Modelo").val() == "DS22/DS23") {
+    $('#teleBridgeBl').show().siblings().hide();
+  } else if ($(this).val() == "Azul" && $("#Modelo").val() == "DS53") {
+    $('#teleBridgeStackBl').show().siblings().hide();
+  }
+});
+$("#ColorSup").trigger("change");
+// Cambia descripción por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "DS20/DS21" && $("#Imán").val() == "Alnico 2") {
+    $('#ds20desc').show().siblings().hide();
+  } else if ($(this).val() == "DS20/DS21" && $("#Imán").val() == "Alnico 5") {
+    $('#ds21desc').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#Imán").val() == "Alnico 2") {
+    $('#ds22desc').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#Imán").val() == "Alnico 5") {
+    $('#ds23desc').show().siblings().hide();
+  } else if ($(this).val() == "DS52" && $("#Imán").val() == "Alnico 2") {
+    $('#ds52iidesc').show().siblings().hide();
+  } else if ($(this).val() == "DS52" && $("#Imán").val() == "Alnico 5") {
+    $('#ds52desc').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#Imán").val() == "Alnico 2") {
+    $('#ds53iidesc').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#Imán").val() == "Alnico 5") {
+    $('#ds53desc').show().siblings().hide();
+  }
+});
+$("#Modelo").trigger("change");
+// Cambia descripción por imán //
+$("#Imán").change(function() {
+  if ($(this).val() == "Alnico 2" && $("#Modelo").val() == "DS20/DS21") {
+    $('#ds20desc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "DS20/DS21") {
+    $('#ds21desc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Modelo").val() == "DS22/DS23") {
+    $('#ds22desc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "DS22/DS23") {
+    $('#ds23desc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Modelo").val() == "DS52") {
+    $('#ds52iidesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "DS52") {
+    $('#ds52desc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Modelo").val() == "DS53") {
+    $('#ds53iidesc').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "DS53") {
+    $('#ds53desc').show().siblings().hide();
+  }
+});
+$("#Imán").trigger("change");
+// Oculta campo color por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "DS22/23" || $(this).val() == "DS53") {
+    $('#colorSupDiv').show();
+    $('#coverSupDiv').hide();
+  } else if ($(this).val() == "DS20/21" || $(this).val() == "DS52") {
+    $('#colorSupDiv').hide();
+    $('#coverSupDiv').show();
+  }
+});
+$("#Modelo").trigger("change");
+</script>
