@@ -221,7 +221,7 @@ form {
         <li>RESISTENCIA: 7,73K (mástil) 8K (puente)</li>
         <li>PICO DE RESONANCIA: 3,8KHz (bobinas en paralelo)</li>
         <li>INDUCTANCIA: 1,54 Henries (bobinas en paralelo)</li>
-        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
         <li>CANCELACIÓN DE RUIDO: No</li>
         <li>CABLE DE SALIDA: Conductores simples de Santoprene ®</li>
         <li>BASE: Fibra vulcanizada</li>
@@ -389,7 +389,7 @@ form {
     <div id="ds64hndesc"><p>El Jazz Bass® Hum Custom V Neck para 5 cuerdas ofrece un tono con mejores medios-bajos que los tradicionales modelos simple bobina y plena cancelación de ruido. Su diseño de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo es ideal para aquellos bajistas que buscan un tono innovador, el cual conserva muchas de las características de los clásicos Jazz Bass como la estructura de núcleos en ALNICO 5. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
       <ul><li>SALIDA: Moderada</li>
         <li>RESISTENCIA: 8,6K (mástil)</li>
-        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
         <li>CANCELACIÓN DE RUIDO: Si</li>
         <li>CABLE DE SALIDA: 4 conductores + malla</li>
         <li>BASE: Fibra vulcanizada</li>
@@ -399,7 +399,7 @@ form {
     <div id="ds64hbdesc"><p>EEl Jazz Bass® Hum Custom V Bridge para 5 cuerdas ofrece un tono con mejores medios-bajos que los tradicionales modelos simple bobina y plena cancelación de ruido. Su diseño de bobinas lineales y un cable de salida de 4-conductores + malla, lo vuelve sumamente versátil para una amplia variedad de conexionados en una presentación con cobertor vintage. Este modelo es ideal para aquellos bajistas que buscan un tono innovador, el cual conserva muchas de las características de los clásicos Jazz Bass como la estructura de núcleos en ALNICO 5. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass® de 5 cuerdas. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
       <ul><li>SALIDA: Moderada</li>
         <li>RESISTENCIA: 9K (puente)</li>
-        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
         <li>CANCELACIÓN DE RUIDO: Si</li>
         <li>CABLE DE SALIDA: 4 conductores + malla</li>
         <li>BASE: Fibra vulcanizada</li>
@@ -411,7 +411,7 @@ form {
         <li>RESISTENCIA: 8,6K (mástil) 9K (puente)</li>
         <li>PICO DE RESONANCIA: 3,41KHz (bobinas en paralelo)</li>
         <li>INDUCTANCIA: 2,76 Henries (mástil) y 2,82 Henries (puente)</li>
-        <li>IMANTACIÓN: Núcleos ALNICO 2 biselados manualmente</li>
+        <li>IMANTACIÓN: Núcleos ALNICO 5 biselados manualmente</li>
         <li>CANCELACIÓN DE RUIDO: Si</li>
         <li>CABLE DE SALIDA: 4 conductores + malla</li>
         <li>BASE: Fibra vulcanizada</li>
@@ -677,4 +677,13 @@ $("#Imán").change(function() {
   }
 });
 $("#Imán").trigger("change");
+// Oculta campo color por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "JB-5" || $(this).val() == "JB-Hum-5") {
+    $('#colorDiv').hide();
+  } else if ($(this).val() == "JB-Custom" || $(this).val() == "JB-Hum-Custom") {
+    $('#colorDiv').show();
+  }
+});
+$("#Modelo").trigger("change");
 </script>
