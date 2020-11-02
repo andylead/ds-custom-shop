@@ -150,9 +150,10 @@ form {
       <option value="Soapbar Negro">Soapbar Negro</option>
       <option value="Soapbar Blanco">Soapbar Blanco</option>
       <option value="Soapbar Crema">Soapbar Crema</option>
-      <option value="Soapbar Cromado">Soapbar Cromado</option>
+      <option value="Soapbar Alpaca Natural">Soapbar Alpaca Natural</option>
       <option value="Dog-ear Negro">Dog-ear Negro</option>
       <option value="Dog-ear Crema">Dog-ear Crema</option>
+      <option value="Dog-ear Cromado">Dog-ear Cromado</option>
     </select>
   </div>
   <div class="form-group">
@@ -226,9 +227,10 @@ form {
   <img src="http://www.dspickups.com.ar/builder/p90/p90soapBk.png" class="colorSupInf" id="p90soapBk">
   <img src="http://www.dspickups.com.ar/builder/p90/p90soapWh.png" class="colorSupInf" id="p90soapWh">
   <img src="http://www.dspickups.com.ar/builder/p90/p90soapCr.png" class="colorSupInf" id="p90soapCr">
-  <img src="http://www.dspickups.com.ar/builder/p90/p90soapCh.png" class="colorSupInf" id="p90soapCh">
+  <img src="http://www.dspickups.com.ar/builder/p90/p90soapCh.png" class="colorSupInf" id="p90soapAl">
   <img src="http://www.dspickups.com.ar/builder/p90/p90dogearBk.png" class="colorSupInf" id="p90dogearBk">
   <img src="http://www.dspickups.com.ar/builder/p90/p90dogearCr.png" class="colorSupInf" id="p90dogearCr">
+  <img src="http://www.dspickups.com.ar/builder/p90/p90dogearCh.png" class="colorSupInf" id="p90dogearCh">
 </div>
 <div class="tornilloSupInf" id="fotojazz">
   <img src="http://www.dspickups.com.ar/builder/p90/p90torAlnico.png" class="tornilloSupInf" id="p90torAlnico">
@@ -248,12 +250,14 @@ $("#Color").change(function() {
     $('#p90soapWh').show().siblings().hide();
   } else if ($(this).val() == "Soapbar Crema") {
     $('#p90soapCr').show().siblings().hide();
-  } else if ($(this).val() == "Soapbar Cromado") {
-    $('#p90soapCh').show().siblings().hide();
+  } else if ($(this).val() == "Soapbar Alpaca Natural") {
+    $('#p90soapAl').show().siblings().hide();
   } else if ($(this).val() == "Dog-ear Negro") {
     $('#p90dogearBk').show().siblings().hide();
   } else if ($(this).val() == "Dog-ear Crema") {
     $('#p90dogearCr').show().siblings().hide();
+  } else if ($(this).val() == "Dog-ear Cromado") {
+    $('#p90dogearCh').show().siblings().hide();
   }
 });
 $("#Color").trigger("change");
