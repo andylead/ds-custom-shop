@@ -848,7 +848,7 @@ $("#Posición").change(function() {
   }
 });
 $("#Posición").trigger("change");
-// Oculta o muestra color de bobina según tipo de cobertor //
+// Oculta o muestra tornillos según cobertor //
 $("#Cobertor").change(function() {
   if (($(this).val() == "Nickel" || $(this).val() == "Cromado" || $(this).val() == "Nickel Negro Perlado" || $(this).val() == "Dorado") && $("#Posición").val() == "Mástil") {
     $('#tornilloInfDiv').hide();
@@ -878,6 +878,64 @@ $("#Cobertor").change(function() {
     $('#tornilloSupDiv2').hide();
     $('#torInf').show();
     $('#torSup').show();
+  }
+});
+$("#Cobertor").trigger("change");
+// Cambia a tornillos elevados por tipo de cobertor //
+$("#Cobertor").change(function() {
+  if (($(this).val() == "Nickel" || $(this).val() == "Cromado" || $(this).val() == "Nickel Negro Perlado" || $(this).val() == "Dorado") && $("#Posición").val() == "Mástil" && $("#tornilloSup2").val() == "RanuraNiq") {
+    $('#torSupRanurado2').show().siblings().hide();
+  } else if (($(this).val() == "Nickel" || $(this).val() == "Cromado" || $(this).val() == "Nickel Negro Perlado" || $(this).val() == "Dorado") && $("#Posición").val() == "Mástil" && $("#tornilloSup2").val() == "AllenNiq") {
+    $('#torSupAllen2').show().siblings().hide();
+  } else if (($(this).val() == "Nickel" || $(this).val() == "Cromado" || $(this).val() == "Nickel Negro Perlado" || $(this).val() == "Dorado") && $("#Posición").val() == "Mástil" && $("#tornilloSup2").val() == "AllenNeg") {
+    $('#torSupAllenNegro2').show().siblings().hide();
+  } else if (($(this).val() == "Nickel 12" || $(this).val() == "Cromado 12" || $(this).val() == "Nickel Negro Perlado 12" || $(this).val() == "Dorado 12") && $("#tornilloSup2").val() == "RanuraNiq") {
+    $('#torSupRanurado2').show().siblings().hide();
+  } else if (($(this).val() == "Nickel 12" || $(this).val() == "Cromado 12" || $(this).val() == "Nickel Negro Perlado 12" || $(this).val() == "Dorado 12") && $("#tornilloSup2").val() == "AllenNiq") {
+    $('#torSupAllen2').show().siblings().hide();
+  } else if (($(this).val() == "Nickel 12" || $(this).val() == "Cromado 12" || $(this).val() == "Nickel Negro Perlado 12" || $(this).val() == "Dorado 12") && $("#tornilloSup2").val() == "AllenNeg") {
+    $('#torSupAllenNegro2').show().siblings().hide();
+  }
+});
+$("#Cobertor").trigger("change");
+$("#Cobertor").change(function() {
+  if (($(this).val() == "Nickel" || $(this).val() == "Cromado" || $(this).val() == "Nickel Negro Perlado" || $(this).val() == "Dorado") && $("#Posición").val() == "Puente" && $("#tornilloInf2").val() == "RanuraNiq") {
+    $('#torInfRanurado2').show().siblings().hide();
+  } else if (($(this).val() == "Nickel" || $(this).val() == "Cromado" || $(this).val() == "Nickel Negro Perlado" || $(this).val() == "Dorado") && $("#Posición").val() == "Puente" && $("#tornilloInf2").val() == "AllenNiq") {
+    $('#torInfAllen2').show().siblings().hide();
+  } else if (($(this).val() == "Nickel" || $(this).val() == "Cromado" || $(this).val() == "Nickel Negro Perlado" || $(this).val() == "Dorado") && $("#Posición").val() == "Puente" && $("#tornilloInf2").val() == "AllenNeg") {
+    $('#torInfAllenNegro2').show().siblings().hide();
+  } else if (($(this).val() == "Nickel 12" || $(this).val() == "Cromado 12" || $(this).val() == "Nickel Negro Perlado 12" || $(this).val() == "Dorado 12") && $("#tornilloInf2").val() == "RanuraNiq") {
+    $('#torInfRanurado2').show().siblings().hide();
+  } else if (($(this).val() == "Nickel 12" || $(this).val() == "Cromado 12" || $(this).val() == "Nickel Negro Perlado 12" || $(this).val() == "Dorado 12") && $("#tornilloInf2").val() == "AllenNiq") {
+    $('#torInfAllen2').show().siblings().hide();
+  } else if (($(this).val() == "Nickel 12" || $(this).val() == "Cromado 12" || $(this).val() == "Nickel Negro Perlado 12" || $(this).val() == "Dorado 12") && $("#tornilloInf2").val() == "AllenNeg") {
+    $('#torInfAllenNegro2').show().siblings().hide();
+  }
+});
+$("#Cobertor").trigger("change");
+// Cambia a tornillos NO elevados por tipo de cobertor //
+$("#Cobertor").change(function() {
+  if (($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno") && $("#tornilloSup").val() == "RanuraNiq") {
+    $('#torSupRanurado').show().siblings().hide();
+  } else if (($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno") && $("#tornilloSup").val() == "AllenNiq") {
+    $('#torSupAllen').show().siblings().hide();
+  } else if (($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno") && $("#tornilloSup").val() == "AllenNeg") {
+    $('#torSupAllenNegro').show().siblings().hide();
+  } else if (($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno") && $("#tornilloSup").val() == "Sólidos") {
+    $('#torSupSolido').show().siblings().hide();
+  }
+});
+$("#Cobertor").trigger("change");
+$("#Cobertor").change(function() {
+  if (($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno") && $("#tornilloInf").val() == "RanuraNiq") {
+    $('#torInfRanurado').show().siblings().hide();
+  } else if (($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno") && $("#tornilloInf").val() == "AllenNiq") {
+    $('#torInfAllen').show().siblings().hide();
+  } else if (($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno") && $("#tornilloInf").val() == "AllenNeg") {
+    $('#torInfAllenNegro').show().siblings().hide();
+  } else if (($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor" || $(this).val() == "Ninguno") && $("#tornilloInf").val() == "Sólidos") {
+    $('#torInfSolido').show().siblings().hide();
   }
 });
 $("#Cobertor").trigger("change");
@@ -1080,7 +1138,7 @@ $("#tornilloInf2").change(function() {
   }
 });
 $("#tornilloInf2").trigger("change");
-// Cambia foto de tornillos //
+// Cambia foto de tornillos por cobertor //
 $("#Cobertor").change(function() {
   if (($(this).val() == "Nickel" || $(this).val() == "Cromado" || $(this).val() == "Nickel Negro Perlado" || $(this).val() == "Dorado" || $(this).val() == "Nickel 12" || $(this).val() == "Cromado 12" || $(this).val() == "Nickel Negro Perlado 12" || $(this).val() == "Dorado 12") && $("#tornilloSup2").val() == "RanuraNiq") {
     $('#torSupRanurado2').show().siblings().hide();
