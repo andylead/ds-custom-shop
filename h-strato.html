@@ -274,6 +274,31 @@ $("#ColorSup").change(function() {
   }
 });
 $("#ColorSup").trigger("change");
+// Cambia color de bobina superior//
+$("#ColorInf").change(function() {
+  if ($(this).val() == "Blanco") {
+    $('#colorInfBlanco').show().siblings().hide();
+  } else if ($(this).val() == "Negro") {
+    $('#colorInfNegro').show().siblings().hide();
+  } else if ($(this).val() == "Marfil") {
+    $('#colorInfMarfil').show().siblings().hide();
+  } else if ($(this).val() == "Crema") {
+    $('#colorInfCrema').show().siblings().hide();
+  } else if ($(this).val() == "Verdoso") {
+    $('#colorInfVerdoso').show().siblings().hide();
+  } else if ($(this).val() == "Amarillo") {
+    $('#colorInfAmarillo').show().siblings().hide();
+  } else if ($(this).val() == "Verde") {
+    $('#colorInfVerde').show().siblings().hide();
+  } else if ($(this).val() == "Rojo") {
+    $('#colorInfRojo').show().siblings().hide();
+  } else if ($(this).val() == "Turquesa") {
+    $('#colorInfTurquesa').show().siblings().hide();
+  } else if ($(this).val() == "Azul") {
+    $('#colorInfAzul').show().siblings().hide();
+  }
+});
+$("#ColorInf").trigger("change");
 // Cambia descripción por modelo //
 $("#Modelo").change(function() {
   if ($(this).val() == "DS40") {
