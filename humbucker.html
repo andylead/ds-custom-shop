@@ -145,7 +145,7 @@ form {
   }
 }
 </style>
-<form class="form">
+<form action="https://formspree.io/f/xknqrakb" method="POST" class="form">
   <div class="form-group">
     <label for="Modelo">Modelo</label>
     <select class="form-control" id="Modelo" name="Modelo">
@@ -261,16 +261,17 @@ form {
   </div>
   <div class="form-group">
     <label for="Nombre">Nombre</label>
-    <input type="text" class="form-control" id="Nombre" name="Nombre">
+    <input type="text" class="form-control" id="Nombre" name="Nombre" required>
   </div>
   <div class="form-group">
-    <label for="E-Mail">E-mail</label>
-    <input type="email" class="form-control" id="E-Mail" name="email">
+    <label for="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">E-mail</label>
+    <input type="email" class="form-control" id="E-Mail" name="email" required>
   </div>
   <div class="form-group">
     <label for="Comments">¿Comentarios o preguntas?</label>
     <textarea class="form-control" id="Comments" rows="5"></textarea>
   </div>
+  <input type="hidden" name="_subject" value="Cotización Humbucker Custom Shop" />
   <button type="submit" class="boton-cotizar">COTIZAR</button>
   <div class="descripcion">
     <div id="ds30ce"><p>Inspirado en el sonido P.A.F pero en formato cerámico, el P-Classic ofrece cristalinos tonos con una impronta ampliada. Este modelo tiene un gran sonido rítmico y un cortante tono que atraviesa la mezcla con mayor ataque y agresividad comparado con los clásicos doble bobina P.A.F de ALNICO. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados, incluido simple bobina, el cual produce un tono cristalino y punzante. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
