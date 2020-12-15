@@ -64,6 +64,15 @@ form {
   width: 450px;
   height: 300px;
 }
+.tornilloSupInf {
+  position: fixed;
+  z-index: 1001;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
 .boton-cotizar {
   text-align: center;
   font-size: 12px;
@@ -404,10 +413,14 @@ $("#ColorSup").change(function() {
 $("#ColorSup").trigger("change");
 // Cambia imagen por imán//
 $("#Imán").change(function() {
-  if ($(this).val() == "Alnico 2") {
+  if ($(this).val() == "Alnico 2" && $("#Núcleos").val() == "Simétricos") {
     $('#torAl').show().siblings().hide();
-  } else if ($(this).val() == "Alnico 5") {
+  } else if ($(this).val() == "Alnico 5" && $("#Núcleos").val() == "Simétricos") {
     $('#torAl').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" && $("#Núcleos").val() == "Asimétricos") {
+    $('#torAs').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("#Núcleos").val() == "Asimétricos") {
+    $('#torAs').show().siblings().hide();
   } else if ($(this).val() == "Cerámico") {
     $('#torCe').show().siblings().hide();
   }
@@ -416,11 +429,11 @@ $("#Imán").trigger("change");
 // Cambia imagen por núcleos//
 $("#Núcleos").change(function() {
   if ($(this).val() == "Asimétricos") {
-    $('#torAl').show().siblings().hide();
+    $('#torAs').show().siblings().hide();
   } else if ($(this).val() == "Simétricos" && $("#Imán").val() == "Alnico 2") {
     $('#torAl').show().siblings().hide();
   } else if ($(this).val() == "Simétricos" && $("#Imán").val() == "Alnico 5") {
-    $('#torCe').show().siblings().hide();
+    $('#torAl').show().siblings().hide();
   } else if ($(this).val() == "Simétricos" && $("#Imán").val() == "Cerámico") {
     $('#torCe').show().siblings().hide();
   }
