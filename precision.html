@@ -118,7 +118,7 @@ form {
   }
 }
 </style>
-<form class="form">
+<form action="https://formspree.io/f/mleopved" method="POST" class="form">
   <div class="form-group">
     <label for="Modelo">Modelo</label>
     <select class="form-control" id="Modelo" name="Modelo">
@@ -147,12 +147,13 @@ form {
   </div>
   <div class="form-group">
     <label for="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">E-mail</label>
-    <input type="email" class="form-control" id="E-Mail" name="E-Mail" required>
+    <input type="email" class="form-control" id="E-Mail" name="email" required>
   </div>
   <div class="form-group">
     <label for="Comments">¿Comentarios o preguntas?</label>
     <textarea class="form-control" id="Comments" rows="5" name="Comentarios"></textarea>
   </div>
+  <input type="hidden" name="_subject" value="Cotización Precision Custom Shop" />
   <button type="submit" class="boton-cotizar">COTIZAR</button>
   <div class="descripcion">
     <div id="ds62adesc"><p>Precision ® diseñado para sonar como los modelos de los años 50’s. De tono profundo y cálido, el modelo es fabricado para aquellos músicos que buscan frecuencias medias definidas y ese tono característico "warm 'n woody" (cálido y maderoso) Sus núcleos de ALNICO 5 desbastados de forma manual junto a bobinas de vueltas moderadas, hacen aparecer gran calidez y “cuerpo” al instrumento. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Precision ® bass. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
@@ -208,8 +209,8 @@ $("#Modelo").change(function() {
     $('#precisionWh').show().siblings().hide();
   } else if ($(this).val() == "P-J Custom V" && $("#Color").val() == "Negro") {
     $('#pjBk').show().siblings().hide();
-  } else if ($(this).val() == "P-J Custom V" && $("#Color").val() == "Blanco") {
-    $('#pjWh').show().siblings().hide();
+  } else if ($(this).val() == "P-J Custom V" && $("#Color").val() == "Crema") {
+    $('#pjCr').show().siblings().hide();
   }
 });
 $("#Modelo").trigger("change");
