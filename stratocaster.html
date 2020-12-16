@@ -158,7 +158,7 @@ form {
   </div>
   <div class="form-group" id="Imanes1011">
     <label for="Imán">Tipo de imantación</label>
-    <select class="form-control" id="Imán" name="Imán">
+    <select class="form-control" id="Imán1011" name="Imán">
       <option value="Alnico 2">Alnico 2</option>
       <option value="Alnico 5">Alnico 5</option>
       <option value="Cerámico">Cerámico</option>
@@ -166,16 +166,16 @@ form {
   </div>
   <div class="form-group" id="Imanes121314">
     <label for="Imán">Tipo de imantación</label>
-    <select class="form-control" id="Imán" name="Imán">
+    <select class="form-control" id="Imán121314" name="Imán">
       <option value="Alnico 2">Alnico 2</option>
       <option value="Alnico 5">Alnico 5</option>
     </select>
   </div>
-  <div class="form-group">
+  <div class="form-group" id="SimAsim">
     <label for="Núcleos">Tipo de nucleos</label>
     <select class="form-control" id="Núcleos" name="Núcleos">
       <option value="Simétricos">Simétricos</option>
-      <option value="Asimétricos">Asimétricos (sólo Alnico 5)</option>
+      <option value="Asimétricos">Asimétricos</option>
     </select>
   </div>
   <div class="form-group" id="colorSupDiv">
@@ -387,6 +387,7 @@ $(function(){
   $('#stratBlanco').show().siblings().hide()
   $('#torAl').show().siblings().hide()
   $('#Imanes121314').hide()
+  $('#SimAsim').hide()
 });
 // Cambia imagen por color//
 $("#ColorSup").change(function() {
@@ -411,71 +412,74 @@ $("#ColorSup").change(function() {
   }
 });
 $("#ColorSup").trigger("change");
-// Cambia imagen por imán//
-$("#Imán").change(function() {
-  if ($(this).val() == "Alnico 2" && $("#Núcleos").val() == "Simétricos") {
-    $('#torAl').show().siblings().hide();
-  } else if ($(this).val() == "Alnico 5" && $("#Núcleos").val() == "Simétricos") {
-    $('#torAl').show().siblings().hide();
-  } else if ($(this).val() == "Alnico 2" && $("#Núcleos").val() == "Asimétricos") {
-    $('#torAs').show().siblings().hide();
-  } else if ($(this).val() == "Alnico 5" && $("#Núcleos").val() == "Asimétricos") {
-    $('#torAs').show().siblings().hide();
-  } else if ($(this).val() == "Cerámico") {
+// Cambia imagen por imán 1011 //
+$("#Imán1011").change(function() {
+  if ($(this).val() == "Cerámico") {
     $('#torCe').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2" || $(this).val() == "Alnico 5") {
+    $('#torAl').show().siblings().hide();
   }
 });
-$("#Imán").trigger("change");
-// Cambia imagen por núcleos//
+$("#Imán1011").trigger("change");
+// Cambia imagen por imán 121314 //
+$("#Imán121314").change(function() {
+  if ($(this).val() == "Cerámico") {
+    $('#torCe').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 2") {
+    $('#torAl').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("Núcleos").val() == "Simétricos") {
+    $('#torAl').show().siblings().hide();
+  } else if ($(this).val() == "Alnico 5" && $("Núcleos").val() == "Asimétricos") {
+    $('#torAs').show().siblings().hide();
+  }
+});
+$("#Imán121314").trigger("change");
+// Cambia imagen por núcleos //
 $("#Núcleos").change(function() {
   if ($(this).val() == "Asimétricos") {
     $('#torAs').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Imán").val() == "Alnico 2") {
+  } else if ($(this).val() == "Simétricos") {
     $('#torAl').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Imán").val() == "Alnico 5") {
-    $('#torAl').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Imán").val() == "Cerámico") {
-    $('#torCe').show().siblings().hide();
   }
 });
 $("#Núcleos").trigger("change");
 // Cambia descripción por modelo //
 $("#Modelo").change(function() {
-  if ($(this).val() == "DS10" && $("#Imán").val() == "Cerámico") {
+  if ($(this).val() == "DS10" && $("#Imán1011").val() == "Cerámico") {
     $('#ds10cedesc').show().siblings().hide();
-  } else if ($(this).val() == "DS10" && $("#Imán").val() == "Alnico 2") {
+  } else if ($(this).val() == "DS10" && $("#Imán1011").val() == "Alnico 2") {
     $('#ds10a2desc').show().siblings().hide();
-  } else if ($(this).val() == "DS10" && $("#Imán").val() == "Alnico 5") {
+  } else if ($(this).val() == "DS10" && $("#Imán1011").val() == "Alnico 5") {
     $('#ds10a5desc').show().siblings().hide();
-  } else if ($(this).val() == "DS11" && $("#Imán").val() == "Cerámico") {
+  } else if ($(this).val() == "DS11" && $("#Imán1011").val() == "Cerámico") {
     $('#ds11cedesc').show().siblings().hide();
-  } else if ($(this).val() == "DS11" && $("#Imán").val() == "Alnico 2") {
+  } else if ($(this).val() == "DS11" && $("#Imán1011").val() == "Alnico 2") {
     $('#ds11a2desc').show().siblings().hide();
-  } else if ($(this).val() == "DS11" && $("#Imán").val() == "Alnico 5") {
+  } else if ($(this).val() == "DS11" && $("#Imán1011").val() == "Alnico 5") {
     $('#ds11a5desc').show().siblings().hide();
-  } else if ($(this).val() == "DS12" && $("#Imán").val() == "Alnico 5" && $("#Núcleos").val() == "Asimétricos") {
+  } else if ($(this).val() == "DS12" && $("#Imán121314").val() == "Alnico 5" && $("#Núcleos").val() == "Asimétricos") {
     $('#ds12asdesc').show().siblings().hide();
-  } else if ($(this).val() == "DS12" && $("#Imán").val() == "Alnico 2") {
+  } else if ($(this).val() == "DS12" && $("#Imán121314").val() == "Alnico 2") {
     $('#ds12a2desc').show().siblings().hide();
-  } else if ($(this).val() == "DS12" && $("#Imán").val() == "Alnico 5" && $("#Núcleos").val() == "Simétricos") {
+  } else if ($(this).val() == "DS12" && $("#Imán121314").val() == "Alnico 5" && $("#Núcleos").val() == "Simétricos") {
     $('#ds12a5desc').show().siblings().hide();
-  } else if ($(this).val() == "DS13" && $("#Imán").val() == "Alnico 5" && $("#Núcleos").val() == "Asimétricos") {
+  } else if ($(this).val() == "DS13" && $("#Imán121314").val() == "Alnico 5" && $("#Núcleos").val() == "Asimétricos") {
     $('#ds13asdesc').show().siblings().hide();
-  } else if ($(this).val() == "DS13" && $("#Imán").val() == "Alnico 2") {
+  } else if ($(this).val() == "DS13" && $("#Imán121314").val() == "Alnico 2") {
     $('#ds13a2desc').show().siblings().hide();
-  } else if ($(this).val() == "DS13" && $("#Imán").val() == "Alnico 5" && $("#Núcleos").val() == "Simétricos") {
+  } else if ($(this).val() == "DS13" && $("#Imán121314").val() == "Alnico 5" && $("#Núcleos").val() == "Simétricos") {
     $('#ds13a5desc').show().siblings().hide();
-  } else if ($(this).val() == "DS14" && $("#Imán").val() == "Alnico 5" && $("#Núcleos").val() == "Asimétricos") {
+  } else if ($(this).val() == "DS14" && $("#Imán121314").val() == "Alnico 5" && $("#Núcleos").val() == "Asimétricos") {
     $('#ds14asdesc').show().siblings().hide();
-  } else if ($(this).val() == "DS14" && $("#Imán").val() == "Alnico 2") {
+  } else if ($(this).val() == "DS14" && $("#Imán121314").val() == "Alnico 2") {
     $('#ds14a2desc').show().siblings().hide();
-  } else if ($(this).val() == "DS14" && $("#Imán").val() == "Alnico 5" && $("#Núcleos").val() == "Simétricos") {
+  } else if ($(this).val() == "DS14" && $("#Imán121314").val() == "Alnico 5" && $("#Núcleos").val() == "Simétricos") {
     $('#ds14a5desc').show().siblings().hide();
   }
 });
 $("#Modelo").trigger("change");
-// Cambia descripción por imán //
-$("#Imán").change(function() {
+// Cambia descripción por imán 1011 //
+$("#Imán1011").change(function() {
   if ($(this).val() == "Cerámico" && $("#Modelo").val() == "DS10") {
     $('#ds10cedesc').show().siblings().hide();
   } else if ($(this).val() == "Alnico 2" && $("#Modelo").val() == "DS10") {
@@ -488,7 +492,12 @@ $("#Imán").change(function() {
     $('#ds11a2desc').show().siblings().hide();
   } else if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "DS11") {
     $('#ds11a5desc').show().siblings().hide();
-  } else if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "DS12" && $("#Núcleos").val() == "Asimétricos") {
+  }
+});
+$("#Imán1011").trigger("change");
+// Cambia descripción por imán 121314 //
+$("#Imán121314").change(function() {
+  if ($(this).val() == "Alnico 5" && $("#Modelo").val() == "DS12" && $("#Núcleos").val() == "Asimétricos") {
     $('#ds12asdesc').show().siblings().hide();
   } else if ($(this).val() == "Alnico 2" && $("#Modelo").val() == "DS12") {
     $('#ds12a2desc').show().siblings().hide();
@@ -508,55 +517,50 @@ $("#Imán").change(function() {
     $('#ds14a5desc').show().siblings().hide();
   }
 });
-$("#Imán").trigger("change");
+$("#Imán121314").trigger("change");
 // Cambia descripción por núcleos //
 $("#Núcleos").change(function() {
-  if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS10" && $("#Imán").val() == "Cerámico") {
-    $('#ds10cedesc').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS10" && $("#Imán").val() == "Alnico 2") {
-    $('#ds10a2desc').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS10" && $("#Imán").val() == "Alnico 5") {
-    $('#ds10a5desc').show().siblings().hide();
-  } else if ($(this).val() == "Asimétricos" && $("#Modelo").val() == "DS10") {
-    $('#ds10a5desc').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS11" && $("#Imán").val() == "Cerámico") {
-    $('#ds11cedesc').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS11" && $("#Imán").val() == "Alnico 2") {
-    $('#ds11a2desc').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS11" && $("#Imán").val() == "Alnico 5") {
-    $('#ds11a5desc').show().siblings().hide();
-  } else if ($(this).val() == "Asimétricos" && $("#Modelo").val() == "DS11") {
-    $('#ds11a5desc').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS12" && $("#Imán").val() == "Alnico 2") {
+  if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS12" && $("#Imán121314").val() == "Alnico 2") {
     $('#ds12a2desc').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS12" && $("#Imán").val() == "Alnico 5") {
+  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS12" && $("#Imán121314").val() == "Alnico 5") {
     $('#ds12a5desc').show().siblings().hide();
   } else if ($(this).val() == "Asimétricos" && $("#Modelo").val() == "DS12") {
     $('#ds12asdesc').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS13" && $("#Imán").val() == "Alnico 2") {
+  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS13" && $("#Imán121314").val() == "Alnico 2") {
     $('#ds13a2desc').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS13" && $("#Imán").val() == "Alnico 5") {
+  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS13" && $("#Imán121314").val() == "Alnico 5") {
     $('#ds13a5desc').show().siblings().hide();
   } else if ($(this).val() == "Asimétricos" && $("#Modelo").val() == "DS13") {
     $('#ds13asdesc').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS14" && $("#Imán").val() == "Alnico 2") {
+  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS14" && $("#Imán121314").val() == "Alnico 2") {
     $('#ds14a2desc').show().siblings().hide();
-  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS14" && $("#Imán").val() == "Alnico 5") {
+  } else if ($(this).val() == "Simétricos" && $("#Modelo").val() == "DS14" && $("#Imán121314").val() == "Alnico 5") {
     $('#ds14a5desc').show().siblings().hide();
   } else if ($(this).val() == "Asimétricos" && $("#Modelo").val() == "DS14") {
     $('#ds14asdesc').show().siblings().hide();
   }
 });
 $("#Núcleos").trigger("change");
-// Oculta campo imanes por núcleos //
-$("#Núcleos").change(function() {
-  if ($(this).val() == "Asimétricos") {
-    $('#Imanes').hide();
-  } else if ($(this).val() == "Simétricos") {
-    $('#Imanes').show();
+// Muestra u oculta campo núcleos por imanes 121314 //
+$("#Imán121314").change(function() {
+  if ($(this).val() == "Alnico 5") {
+    $('#SimAsim').show();
+  } else if ($(this).val() == "Alnico 2") {
+    $('#SimAsim').hide();
   }
 });
-$("#Núcleos").trigger("change");
+$("#Imán121314").trigger("change");
+// Muestra u oculta campo núcleos por modelo //
+$("#Modelo").change(function() {
+  if ($(this).val() == "DS10" || $(this).val() == "DS11") {
+    $('#SimAsim').hide();
+  } else if (($(this).val() == "DS12" || $(this).val() == "DS13" || $(this).val() == "DS14") && $("#Imán121314").val() == "Alnico 2") {
+    $('#SimAsim').hide();
+  } else if (($(this).val() == "DS12" || $(this).val() == "DS13" || $(this).val() == "DS14") && $("#Imán121314").val() == "Alnico 5") {
+    $('#SimAsim').show();
+  }
+});
+$("#Modelo").trigger("change");
 // Cambia campo imanes por modelo //
 $("#Modelo").change(function() {
   if ($(this).val() == "DS10" || $(this).val() == "DS11") {
