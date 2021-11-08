@@ -3,11 +3,13 @@ body {
   background-color: #f5f5f5;
 }
 form {
-  display: block;
-  max-width: 700px;
-  display: block;
+  max-width: 1280px;
+  display: flex;
   margin: 0 auto;
   text-align: center;
+}
+.izquierda {
+  flex: 50%;
 }
 .form-group {
   display: flex;
@@ -36,11 +38,12 @@ form {
   overflow: scroll;
 }
 .base-bg {
-  position: fixed;
+  display: block;
+  position: sticky;
   z-index: 998;
   right: 50%;
-  margin-right: -225px;
-  bottom: 25px;
+  margin-right: -420px;
+  top: 25px;
   width: 448px;
   height: 320px;
   background-color: rgba(255, 255, 255, 0.85);
@@ -50,8 +53,8 @@ form {
   position: fixed;
   z-index: 1000;
   right: 50%;
-  margin-right: -225px;
-  bottom: 25px;
+  margin-right: -420px;
+  top: 25px;
   width: 450px;
   height: 300px;
 }
@@ -119,6 +122,7 @@ form {
 }
 </style>
 <form action="https://formspree.io/f/mleopved" method="POST" class="form">
+  <div class="izquierda">
   <div class="form-group">
     <label for="Modelo">Modelo</label>
     <select class="form-control" id="Modelo" name="Modelo">
@@ -126,17 +130,17 @@ form {
       <option value="P-J Custom V">P-J ® Custom V</option>
     </select>
   </div>
-  <div class="form-group" id="colorDivP">
+  <div class="form-group" id="color">
     <label for="Color">Color</label>
-    <select class="form-control" id="Color" name="Color">
+    <select class="form-control" id="ColorDivP" name="Color">
       <option value="Negro">Negro</option>
       <option value="Crema">Crema</option>
       <option value="Blanco">Blanco</option>
     </select>
   </div>
-  <div class="form-group" id="colorDivPJ">
+  <div class="form-group" id="color">
     <label for="Color">Color</label>
-    <select class="form-control" id="Color" name="Color">
+    <select class="form-control" id="#ColorDivPJ" name="Color">
       <option value="Negro">Negro</option>
       <option value="Crema">Crema</option>
     </select>
@@ -155,6 +159,7 @@ form {
   </div>
   <input type="hidden" name="_subject" value="Cotización Precision Custom Shop" />
   <button type="submit" class="boton-cotizar">COTIZAR</button>
+  </div>
   <div class="descripcion">
     <div id="ds62adesc"><p>Precision ® diseñado para sonar como los modelos de los años 50’s. De tono profundo y cálido, el modelo es fabricado para aquellos músicos que buscan frecuencias medias definidas y ese tono característico "warm 'n woody" (cálido y maderoso) Sus núcleos de ALNICO 5 desbastados de forma manual junto a bobinas de vueltas moderadas, hacen aparecer gran calidez y “cuerpo” al instrumento. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Precision ® bass. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
       <ul><li>SALIDA: Moderada</li>
@@ -201,15 +206,15 @@ $(function(){
 });
 // Cambia imagen por modelo //
 $("#Modelo").change(function() {
-  if ($(this).val() == "Precision Custom V" && $("#Color").val() == "Negro") {
+  if ($(this).val() == "Precision Custom V" && $("#ColorDivP").val() == "Negro") {
     $('#precisionBk').show().siblings().hide();
-  } else if ($(this).val() == "Precision Custom V" && $("#Color").val() == "Crema") {
+  } else if ($(this).val() == "Precision Custom V" && $("#ColorDivP").val() == "Crema") {
     $('#precisionCr').show().siblings().hide();
-  } else if ($(this).val() == "Precision Custom V" && $("#Color").val() == "Blanco") {
+  } else if ($(this).val() == "Precision Custom V" && $("#ColorDivP").val() == "Blanco") {
     $('#precisionWh').show().siblings().hide();
-  } else if ($(this).val() == "P-J Custom V" && $("#Color").val() == "Negro") {
+  } else if ($(this).val() == "P-J Custom V" && $("#ColorDivPJ").val() == "Negro") {
     $('#pjBk').show().siblings().hide();
-  } else if ($(this).val() == "P-J Custom V" && $("#Color").val() == "Crema") {
+  } else if ($(this).val() == "P-J Custom V" && $("#ColorDivPJ").val() == "Crema") {
     $('#pjCr').show().siblings().hide();
   }
 });
