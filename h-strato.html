@@ -64,6 +64,15 @@ form {
   width: 450px;
   height: 300px;
 }
+.nucleosGold {
+  position: fixed;
+  z-index: 1001;
+  right: 50%;
+  margin-right: -225px;
+  bottom: 25px;
+  width: 450px;
+  height: 300px;
+}
 .boton-cotizar {
   text-align: center;
   font-size: 12px;
@@ -86,6 +95,11 @@ form {
 .descripcion {
   width: 700px;
   text-align: justify;
+}
+.aviso-color {
+  width: 700px;
+  text-align: justify;
+  color: #c00;
 }
 /* Celulares vertical */
 @media screen and (max-width: 600px) {
@@ -125,6 +139,11 @@ form {
     padding-left: 20px;
     padding-right: 20px;
   }
+  .aviso-color {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 </style>
 <form action="https://formspree.io/f/meqprdqg" method="POST" class="form">
@@ -154,6 +173,7 @@ form {
       <option value="Amarillo">Amarillo</option>
       <option value="Verde">Verde</option>
       <option value="Rojo">Rojo</option>
+      <option value="Rosa">Rosa</option>
       <option value="Turquesa">Turquesa</option>
       <option value="Azul">Azul</option>
     </select>
@@ -169,8 +189,16 @@ form {
       <option value="Amarillo">Amarillo</option>
       <option value="Verde">Verde</option>
       <option value="Rojo">Rojo</option>
+      <option value="Rosa">Rosa</option>
       <option value="Turquesa">Turquesa</option>
       <option value="Azul">Azul</option>
+    </select>
+  </div>
+  <div class="form-group" id="nucleosGold">
+    <label for="Nucleos">Color de núcleos</label>
+    <select class="form-control" id="Nucleos" name="Color de Nucleos">
+      <option value="Niquelados">Niquelados</option>
+      <option value="Dorados">Dorados</option>
     </select>
   </div>
   <div class="form-group">
@@ -187,6 +215,7 @@ form {
   </div>
   <input type="hidden" name="_subject" value="Cotización H-Strato Custom Shop" />
   <button type="submit" class="boton-cotizar">COTIZAR</button>
+  <div class="aviso-color"><p>Las imágenes previas son a modo ilustrativo y pueden diferir de la realidad.</p></div>
   <div class="descripcion">
     <div id="ds40desc"><p>Esta pequeña bestia doble en formato de simple, te dará muy buenos armónicos, focalizados rangos medios y redondeados agudos. Más agresivo que el H-Strato.06 (DS41) gracias a su extra bobinado, el H-Strato.05 amplifica el crunch de los acordes y ofrece un potente sonido para improvisaciones/solos. Está equipado con un imán cerámico y un cable de salida de 4 conductores + malla para poder realizar múltiples conexionados. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
       <ul><li>SALIDA: Moderada / Alta</li>
@@ -220,6 +249,9 @@ form {
 <div class="base" id="base">
   <img src="http://www.dspickups.com.ar/builder/h-strato/base.png" class="base1" id="base1">
 </div>
+<div class="nucleosGold" id="Nucleos">
+  <img src="http://www.dspickups.com.ar/builder/h-strato/nucleosGold.png" class="nucleosGold" id="nucleosSupInfGold">
+</div>
 <div class="colorSupInf" id="colorSup">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupBlanco.png" class="colorSupInf" id="colorSupBlanco">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupNegro.png" class="colorSupInf" id="colorSupNegro">
@@ -229,6 +261,7 @@ form {
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupAmarillo.png" class="colorSupInf" id="colorSupAmarillo">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupVerde.png" class="colorSupInf" id="colorSupVerde">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupRojo.png" class="colorSupInf" id="colorSupRojo">
+  <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupRosa.png" class="colorSupInf" id="colorSupRosa">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupTurquesa.png" class="colorSupInf" id="colorSupTurquesa">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorSupAzul.png" class="colorSupInf" id="colorSupAzul">
 </div>
@@ -241,6 +274,7 @@ form {
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfAmarillo.png" class="colorSupInf" id="colorInfAmarillo">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfVerde.png" class="colorSupInf" id="colorInfVerde">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfRojo.png" class="colorSupInf" id="colorInfRojo">
+  <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfRosa.png" class="colorSupInf" id="colorInfRosa">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfTurquesa.png" class="colorSupInf" id="colorInfTurquesa">
   <img src="http://www.dspickups.com.ar/builder/h-strato/colorInfAzul.png" class="colorSupInf" id="colorInfAzul">
 </div>
@@ -249,6 +283,7 @@ form {
 $(function(){
   $('#colorSupBlanco').show().siblings().hide()
   $('#colorInfBlanco').show().siblings().hide()
+  $('#nucleosSupInfGold').hide().siblings().hide()
 });
 // Cambia color de bobina superior//
 $("#ColorSup").change(function() {
@@ -268,6 +303,8 @@ $("#ColorSup").change(function() {
     $('#colorSupVerde').show().siblings().hide();
   } else if ($(this).val() == "Rojo") {
     $('#colorSupRojo').show().siblings().hide();
+  } else if ($(this).val() == "Rosa") {
+    $('#colorSupRosa').show().siblings().hide();
   } else if ($(this).val() == "Turquesa") {
     $('#colorSupTurquesa').show().siblings().hide();
   } else if ($(this).val() == "Azul") {
@@ -293,6 +330,8 @@ $("#ColorInf").change(function() {
     $('#colorInfVerde').show().siblings().hide();
   } else if ($(this).val() == "Rojo") {
     $('#colorInfRojo').show().siblings().hide();
+  } else if ($(this).val() == "Rosa") {
+    $('#colorInfRosa').show().siblings().hide();
   } else if ($(this).val() == "Turquesa") {
     $('#colorInfTurquesa').show().siblings().hide();
   } else if ($(this).val() == "Azul") {
@@ -300,6 +339,15 @@ $("#ColorInf").change(function() {
   }
 });
 $("#ColorInf").trigger("change");
+// Agrega núcleos dorados//
+$("#Nucleos").change(function() {
+  if ($(this).val() == "Niquelados") {
+    $('#nucleosSupInfGold').hide();
+  } else if ($(this).val() == "Dorados") {
+    $('#nucleosSupInfGold').show();
+  }
+});
+$("#Nucleos").trigger("change");
 // Cambia descripción por modelo //
 $("#Modelo").change(function() {
   if ($(this).val() == "DS40") {
