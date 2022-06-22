@@ -78,6 +78,11 @@ form {
   width: 700px;
   text-align: justify;
 }
+.aviso-color {
+  width: 700px;
+  text-align: justify;
+  color: #c00;
+}
 /* Celulares vertical */
 @media screen and (max-width: 600px) {
   form {
@@ -112,6 +117,11 @@ form {
     height: 200px;
   }
   .descripcion {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .aviso-color {
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
@@ -164,6 +174,7 @@ form {
   </div>
   <input type="hidden" name="_subject" value="Cotización Jazz Bass Custom Shop" />
   <button type="submit" class="boton-cotizar">COTIZAR</button>
+  <div class="aviso-color"><p>Las imágenes previas son a modo ilustrativo y pueden diferir de la realidad.</p></div>
   <div class="descripcion">
     <div id="ds60andesc"><p>De tono cálido y dulce con mayor vibración natural de las cuerdas y enorme sustain, este modelo en ALNICO 2 es bobinado con la exacta cantidad de salida y definición sin resultar apagado u opaco. Comparado con el DS60-N, este Jazz Bass ® presenta mejor definición en el rango agudo, con más twang y ataque siendo que los núcleos de ALNICO se ubican más próximos a las cuerdas. Construidos en el color y el espesor característicos de fibra vulcanizada, este set es un reemplazo directo para cualquier American Standard Jazz Bass ®. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
       <ul><li>SALIDA: Moderada</li>
@@ -478,6 +489,35 @@ $("#Modelo").change(function() {
   }
 });
 $("#Modelo").trigger("change");
+// Cambia imagen por color //
+$("#Color").change(function() {
+  if ($(this).val() == "Negro" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-Custom") {
+    $('#jbSetBk').show().siblings().hide();
+  } else if ($(this).val() == "Negro" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-Custom") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "Negro" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-Custom") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "Crema" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-Custom") {
+    $('#jbSetCr').show().siblings().hide();
+  } else if ($(this).val() == "Crema" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-Custom") {
+    $('#jbSoloCr').show().siblings().hide();
+  } else if ($(this).val() == "Crema" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-Custom") {
+    $('#jbSoloCr').show().siblings().hide();
+  } else if ($(this).val() == "Negro" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#jbSetBk').show().siblings().hide();
+  } else if ($(this).val() == "Negro" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "Negro" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#jbSoloBk').show().siblings().hide();
+  } else if ($(this).val() == "Crema" && $("#Posición").val() == "Set x2" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#jbSetCr').show().siblings().hide();
+  } else if ($(this).val() == "Crema" && $("#Posición").val() == "Mástil" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#jbSoloCr').show().siblings().hide();
+  } else if ($(this).val() == "Crema" && $("#Posición").val() == "Puente" && $("#Modelo").val() == "JB-Hum-Custom") {
+    $('#jbSoloCr').show().siblings().hide();
+  }
+});
+$("#Color").trigger("change");
 // Cambia imagen por posición //
 $("#Posición").change(function() {
   if ($(this).val() == "Set x2" && $("#Modelo").val() == "JB-Custom" && $("#Color").val() == "Negro") {
