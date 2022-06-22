@@ -87,6 +87,11 @@ form {
   width: 700px;
   text-align: justify;
 }
+.aviso-color {
+  width: 700px;
+  text-align: justify;
+  color: #c00;
+}
 @media only screen and (max-width: 600px) {
   .form-control {
     max-width: 90%;
@@ -102,6 +107,9 @@ form {
   height: 240px;
   }
   .descripcion {
+    max-width: 90%;
+  }
+  .aviso-color {
     max-width: 90%;
   }
 }
@@ -143,6 +151,11 @@ form {
     padding-left: 20px;
     padding-right: 20px;
   }
+  .aviso-color {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 </style>
 <form action="https://formspree.io/f/xgenkbra" method="POST" class="form">
@@ -175,9 +188,12 @@ form {
     <select class="form-control" id="ColorSup" name="Color">
       <option value="Negro">Negro</option>
       <option value="Blanco">Blanco</option>
+      <option value="Marfil">Marfil</option>
+      <option value="Crema">Crema</option>
       <option value="Verdoso">Amarillo verdoso</option>
       <option value="Amarillo">Amarillo</option>
       <option value="Verde">Verde</option>
+      <option value="Rojo">Rojo</option>
       <option value="Rosa">Rosa</option>
       <option value="Turquesa">Turquesa</option>
       <option value="Azul">Azul</option>
@@ -197,6 +213,7 @@ form {
   </div>
   <input type="hidden" name="_subject" value="Cotización Telecaster Custom Shop" />
   <button type="submit" class="boton-cotizar">COTIZAR</button>
+  <div class="aviso-color"><p>Las imágenes previas son a modo ilustrativo y pueden diferir de la realidad.</p></div>
   <div class="descripcion">
     <div id="ds20desc"><p>Modelo para la posición del mástil de Telecaster® equipado con núcleos de ALNICO 2 que ofrece un sonido dulce y cremoso. Este modelo es bobinado con un tap o derivación para obtener dos niveles de salida y tonalidad que pueden ser fácilmente conmutados con un push-pull, push-push o mini switch. Tono cálido con gran sustain en la opción tapped y firme respuesta en los medios-bajos con mayor agresividad en la versión full/completa, este micrófono tiene un sonido general más redondeado con notas porosas que lo hace ideal para instrumentos brillantes. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
       <ul><li>SALIDA: Moderada</li>
@@ -304,6 +321,9 @@ form {
   <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeRs.png" class="colorSupInf" id="teleBridgeRs">
   <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeTq.png" class="colorSupInf" id="teleBridgeTq">
   <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeBl.png" class="colorSupInf" id="teleBridgeBl">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeRd.png" class="colorSupInf" id="teleBridgeRd">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeIv.png" class="colorSupInf" id="teleBridgeIv">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeCr.png" class="colorSupInf" id="teleBridgeCr">
   <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackBk.png" class="colorSupInf" id="teleBridgeStackBk">
   <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackWh.png" class="colorSupInf" id="teleBridgeStackWh">
   <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackMt.png" class="colorSupInf" id="teleBridgeStackMt">
@@ -312,6 +332,9 @@ form {
   <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackRs.png" class="colorSupInf" id="teleBridgeStackRs">
   <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackTq.png" class="colorSupInf" id="teleBridgeStackTq">
   <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackBl.png" class="colorSupInf" id="teleBridgeStackBl">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackRd.png" class="colorSupInf" id="teleBridgeStackRd">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackIv.png" class="colorSupInf" id="teleBridgeStackIv">
+  <img src="http://www.dspickups.com.ar/builder/telecaster/teleBridgeStackCr.png" class="colorSupInf" id="teleBridgeStackCr">
 </div>
 <script type="text/javascript">
 // Muestra las primeras previews //
@@ -337,12 +360,18 @@ $("#Modelo").change(function() {
     $('#teleBridgeBk').show().siblings().hide();
   } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Blanco") {
     $('#teleBridgeWh').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Marfil") {
+    $('#teleBridgeIv').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Crema") {
+    $('#teleBridgeCr').show().siblings().hide();
   } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Verdoso") {
     $('#teleBridgeMt').show().siblings().hide();
   } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Amarillo") {
     $('#teleBridgeYl').show().siblings().hide();
   } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Verde") {
     $('#teleBridgeGr').show().siblings().hide();
+  } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Rojo") {
+    $('#teleBridgeRd').show().siblings().hide();
   } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Rosa") {
     $('#teleBridgeRs').show().siblings().hide();
   } else if ($(this).val() == "DS22/DS23" && $("#ColorSup").val() == "Turquesa") {
@@ -353,12 +382,18 @@ $("#Modelo").change(function() {
     $('#teleBridgeStackBk').show().siblings().hide();
   } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Blanco") {
     $('#teleBridgeStackWh').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Marfil") {
+    $('#teleBridgeStackIv').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Crema") {
+    $('#teleBridgeStackCr').show().siblings().hide();
   } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Verdoso") {
     $('#teleBridgeStackMt').show().siblings().hide();
   } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Amarillo") {
     $('#teleBridgeStackYl').show().siblings().hide();
   } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Verde") {
     $('#teleBridgeStackGr').show().siblings().hide();
+  } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Rojo") {
+    $('#teleBridgeStackRd').show().siblings().hide();
   } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Rosa") {
     $('#teleBridgeStackRs').show().siblings().hide();
   } else if ($(this).val() == "DS53" && $("#ColorSup").val() == "Turquesa") {
@@ -395,6 +430,14 @@ $("#ColorSup").change(function() {
     $('#teleBridgeWh').show().siblings().hide();
   } else if ($(this).val() == "Blanco" && $("#Modelo").val() == "DS53") {
     $('#teleBridgeStackWh').show().siblings().hide();
+  } else if ($(this).val() == "Marfil" && $("#Modelo").val() == "DS22/DS23") {
+    $('#teleBridgeIv').show().siblings().hide();
+  } else if ($(this).val() == "Marfil" && $("#Modelo").val() == "DS53") {
+    $('#teleBridgeStackIv').show().siblings().hide();
+  } else if ($(this).val() == "Crema" && $("#Modelo").val() == "DS22/DS23") {
+    $('#teleBridgeCr').show().siblings().hide();
+  } else if ($(this).val() == "Crema" && $("#Modelo").val() == "DS53") {
+    $('#teleBridgeStackCr').show().siblings().hide();
   } else if ($(this).val() == "Verdoso" && $("#Modelo").val() == "DS22/DS23") {
     $('#teleBridgeMt').show().siblings().hide();
   } else if ($(this).val() == "Verdoso" && $("#Modelo").val() == "DS53") {
@@ -407,6 +450,10 @@ $("#ColorSup").change(function() {
     $('#teleBridgeGr').show().siblings().hide();
   } else if ($(this).val() == "Verde" && $("#Modelo").val() == "DS53") {
     $('#teleBridgeStackGr').show().siblings().hide();
+  } else if ($(this).val() == "Rojo" && $("#Modelo").val() == "DS22/DS23") {
+    $('#teleBridgeRd').show().siblings().hide();
+  } else if ($(this).val() == "Rojo" && $("#Modelo").val() == "DS53") {
+    $('#teleBridgeStackRd').show().siblings().hide();
   } else if ($(this).val() == "Rosa" && $("#Modelo").val() == "DS22/DS23") {
     $('#teleBridgeRs').show().siblings().hide();
   } else if ($(this).val() == "Rosa" && $("#Modelo").val() == "DS53") {
