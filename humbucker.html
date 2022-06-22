@@ -105,6 +105,11 @@ form {
   width: 700px;
   text-align: justify;
 }
+.aviso-color {
+  width: 700px;
+  text-align: justify;
+  color: #c00;
+}
 /* Celulares vertical */
 @media screen and (max-width: 600px) {
   form {
@@ -139,6 +144,11 @@ form {
     height: 200px;
   }
   .descripcion {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .aviso-color {
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
@@ -239,6 +249,7 @@ form {
       <option value="Verdoso">Amarillo Verdoso</option>
       <option value="Amarillo">Amarillo</option>
       <option value="Verde">Verde</option>
+      <option value="Rojo">Rojo</option>
       <option value="Rosa">Rosa</option>
       <option value="Turquesa">Turquesa</option>
       <option value="Azul">Azul</option>
@@ -254,6 +265,7 @@ form {
       <option value="Verdoso">Amarillo Verdoso</option>
       <option value="Amarillo">Amarillo</option>
       <option value="Verde">Verde</option>
+      <option value="Rojo">Rojo</option>
       <option value="Rosa">Rosa</option>
       <option value="Turquesa">Turquesa</option>
       <option value="Azul">Azul</option>
@@ -273,6 +285,7 @@ form {
   </div>
   <input type="hidden" name="_subject" value="Cotización Humbucker Custom Shop" />
   <button type="submit" class="boton-cotizar">COTIZAR</button>
+  <div class="aviso-color"><p>Las imágenes previas son a modo ilustrativo y pueden diferir de la realidad.</p></div>
   <div class="descripcion">
     <div id="ds30ce"><p>Inspirado en el sonido P.A.F pero en formato cerámico, el P-Classic ofrece cristalinos tonos con una impronta ampliada. Este modelo tiene un gran sonido rítmico y un cortante tono que atraviesa la mezcla con mayor ataque y agresividad comparado con los clásicos doble bobina P.A.F de ALNICO. Protegido por una delgada cinta, el alambre de cobre es bobinado muy próximo a los núcleos ferrosos, ofreciendo mayor sensibilidad y sustain comparado con cualquier otro micrófono doble bobina existente. Viene provisto de un cable de 4 conductores + malla para poder realizar múltiples conexionados, incluido simple bobina, el cual produce un tono cristalino y punzante. Orgullosamente fabricado en Florida-BA, este producto es ensamblado manualmente en nuestro taller y parafinado en cámara de vacío para evitar acoples indeseados.</p>
       <ul><li>SALIDA: Moderada</li>
@@ -690,6 +703,7 @@ form {
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorSupVerdoso.png" class="colorSupInf" id="colorSupVerdoso">
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorSupAmarillo.png" class="colorSupInf" id="colorSupAmarillo">
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorSupVerde.png" class="colorSupInf" id="colorSupVerde">
+  <img src="http://www.dspickups.com.ar/builder/humbucker/colorSupRojo.png" class="colorSupInf" id="colorSupRojo">
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorSupRosa.png" class="colorSupInf" id="colorSupRosa">
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorSupTurquesa.png" class="colorSupInf" id="colorSupTurquesa">
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorSupAzul.png" class="colorSupInf" id="colorSupAzul">
@@ -709,6 +723,8 @@ form {
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorInfAmarillo2.png" class="colorSupInf" id="colorInfAmarillo2">
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorInfVerde.png" class="colorSupInf" id="colorInfVerde">
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorInfVerde2.png" class="colorSupInf" id="colorInfVerde2">
+  <img src="http://www.dspickups.com.ar/builder/humbucker/colorInfRojo.png" class="colorSupInf" id="colorInfRojo">
+  <img src="http://www.dspickups.com.ar/builder/humbucker/colorInfRojo2.png" class="colorSupInf" id="colorInfRojo2">
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorInfRosa.png" class="colorSupInf" id="colorInfRosa">
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorInfRosa2.png" class="colorSupInf" id="colorInfRosa2">
   <img src="http://www.dspickups.com.ar/builder/humbucker/colorInfTurquesa.png" class="colorSupInf" id="colorInfTurquesa">
@@ -970,6 +986,10 @@ $("#Cobertor").change(function() {
     $('#colorInfVerde2').show().siblings().hide();
   } else if (($(this).val() != "Abierto Cro" && $(this).val() != "Abierto Fla" && $(this).val() != "Abierto Niq" && $(this).val() != "Abierto Dor") && $("#ColorInf").val() == "Verde") {
     $('#colorInfVerde').show().siblings().hide();
+  } else if (($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor") && $("#ColorInf").val() == "Rojo") {
+    $('#colorInfRojo2').show().siblings().hide();
+  } else if (($(this).val() != "Abierto Cro" && $(this).val() != "Abierto Fla" && $(this).val() != "Abierto Niq" && $(this).val() != "Abierto Dor") && $("#ColorInf").val() == "Rojo") {
+    $('#colorInfRojo').show().siblings().hide();
   } else if (($(this).val() == "Abierto Cro" || $(this).val() == "Abierto Fla" || $(this).val() == "Abierto Niq" || $(this).val() == "Abierto Dor") && $("#ColorInf").val() == "Rosa") {
     $('#colorInfRosa2').show().siblings().hide();
   } else if (($(this).val() != "Abierto Cro" && $(this).val() != "Abierto Fla" && $(this).val() != "Abierto Niq" && $(this).val() != "Abierto Dor") && $("#ColorInf").val() == "Rosa") {
@@ -1001,6 +1021,8 @@ $("#ColorSup").change(function() {
     $('#colorSupAmarillo').show().siblings().hide();
   } else if ($(this).val() == "Verde") {
     $('#colorSupVerde').show().siblings().hide();
+  } else if ($(this).val() == "Rojo") {
+    $('#colorSupRojo').show().siblings().hide();
   } else if ($(this).val() == "Rosa") {
     $('#colorSupRosa').show().siblings().hide();
   } else if ($(this).val() == "Turquesa") {
@@ -1040,6 +1062,10 @@ $("#ColorInf").change(function() {
     $('#colorInfVerde2').show().siblings().hide();
   } else if ($(this).val() == "Verde") {
     $('#colorInfVerde').show().siblings().hide();
+  } else if ($(this).val() == "Rojo" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
+    $('#colorInfRojo2').show().siblings().hide();
+  } else if ($(this).val() == "Rojo") {
+    $('#colorInfRojo').show().siblings().hide();
   } else if ($(this).val() == "Rosa" && ($("#Cobertor").val() == "Abierto Cro" || $("#Cobertor").val() == "Abierto Fla" || $("#Cobertor").val() == "Abierto Niq" || $("#Cobertor").val() == "Abierto Dor")) {
     $('#colorInfRosa2').show().siblings().hide();
   } else if ($(this).val() == "Rosa") {
